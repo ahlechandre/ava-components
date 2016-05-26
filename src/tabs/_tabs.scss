@@ -1,0 +1,54 @@
+@import '../variables';
+
+.ava-tabs {
+  background-color: transparent;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  height: auto;
+  
+  & .indicator {
+    background-color: $color-accent;
+    height: 3px;
+  }
+
+  & .ava-tabs__item {
+    height: auto;    
+  }  
+}
+
+.ava-tabs--icons {
+  
+  & .ava-tabs__item-text {
+    display: none;
+  }
+  
+}
+
+.ava-tabs__item-text {
+  @include DisplayFlex();
+  order: 2;    
+  color: inherit;  
+}
+
+.ava-tabs__item-icon {
+  color: inherit;
+  @include DisplayFlex();
+  order: 1;
+  align-items: center;
+  height: auto;
+
+  & i {
+    color: inherit;    
+  }
+}
+
+.ava-tabs__link {
+  color: rgba(0, 0, 0, 0.54)!important;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;    
+
+  &.active {
+    color: $color-accent!important;    
+  }
+  @include DisplayFlex(!important);
+}

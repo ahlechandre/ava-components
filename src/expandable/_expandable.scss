@@ -1,0 +1,26 @@
+@import '../_variables';
+
+.ava-expandable.is-off {
+  
+  & .ava-expandable__content {
+    display: none;
+  }
+}
+
+.ava-expandable.is-on {
+  
+  & .ava-expandable__content {
+    display: block;
+  }
+}
+
+.ava-expandable--table.is-on {
+  
+  & .ava-expandable__content {
+    display: table-row-group;
+  }
+}
+
+.ava-expandable__content {
+  @include Animation(FadeIn, 0.5s, ease-in-out);
+}

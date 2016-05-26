@@ -1,0 +1,15 @@
+.ava-shadow--2dp {
+  @include shadow-2dp();
+}
+
+.ava-shadow--4dp {
+  @include shadow-4dp();
+}
+
+.ava-shadow--6dp {
+  @include shadow-6dp();
+}
+
+.ava-shadow--8dp {
+  @include shadow-8dp();
+}

@@ -1,0 +1,33 @@
+@import '../_variables';
+
+.ava-shelf__content {
+
+  & .ava-shelf__content {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }  
+}
+
+.ava-shelf.is-expanded {
+  
+  & .ava-shelf__content {
+    @include Animation(FadeIn, 0.5s, ease-in-out);    
+  }
+}
+
+.ava-shelf.is-compact {
+
+  & .ava-shelf__content {
+    padding: 10px 0;
+    margin: auto 20px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+    @media only screen and ( max-width: 460px ) {
+      & {
+        overflow-x: scroll;
+      }
+    }      
+  }
+}

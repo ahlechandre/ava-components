@@ -1,0 +1,39 @@
+@import '../variables';
+
+/* PANEL */
+
+.ava-section__panel {
+  position: relative;
+  background-color: $color-primary-dark;
+  width: 100%;
+  min-height: 180px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.ava-section__panel .ava-section__panel-action {
+  position: absolute;
+  bottom: -24px;
+  right: 48px;
+  z-index: 2;
+}
+
+.ava-section__panel-title {
+  text-align: left;
+  color: white;
+}
+
+.ava-section__panel-title-text, .ava-section__panel-subtitle {
+  color: inherit;
+}
+
+.ava-section__panel-title-text {
+  font-size: 2.5rem;
+  margin: 12px 0 6px 0;
+}
+
+.ava-section__panel-subtitle {
+  font-size: 1.5rem;  
+  margin: 6px 0;
+  opacity: .7;
+}

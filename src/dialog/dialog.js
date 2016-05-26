@@ -1,0 +1,69 @@
+/**
+ * dialog.js - a component to handle dialogs. 
+ * 
+ * @author Alexandre Thebaldi <ahlechandre@gmail.com>
+ * @requires componentize
+ */
+(function () {
+  'use strict';
+  /**
+   * 
+   * @class
+   */
+  function AvaDialog(element) {
+    this.element = element;
+
+    // Initializes the instance.
+    this.init();
+  };
+
+  /**
+   * Stories the css classes used by this component.
+   * 
+   */
+  AvaDialog.prototype._cssClasses = {};
+
+  /**
+   * Stories the constant strings used by this component.
+   * 
+   */
+  AvaDialog.prototype._constants = {};
+  
+  /**
+   * Initializes the dialog component.
+   * 
+   */
+  AvaDialog.prototype.create = function () {
+    var triggerElementHref = '#' + this.element.getAttribute('id');
+    var triggerElement = document.querySelector('[href="' + triggerElementHref + '"]');
+    
+    if (!triggerElement) return;
+    
+    // jQuery initialization.
+    $(triggerElement).leanModal();    
+  };
+  
+  /**
+   * Initializes the instance.
+   * 
+   */
+  AvaDialog.prototype.init = function () {
+
+    if (!this.element) return;
+
+    if (typeof $ === 'undefined' || typeof jQuery === 'undefined') {
+      console.warn('Please, load jQuery. Dialog Component has jQuery as dependency.');
+      return;
+    }
+    
+    // Initializes the dialog.
+    this.create();
+  };
+
+  // Registers the component. "Componentize" object must be available globally.
+  Componentize.register({
+    name: 'AvaDialog',
+    constructor: AvaDialog,
+    cssClass: 'ava-dialog',
+  });
+})();

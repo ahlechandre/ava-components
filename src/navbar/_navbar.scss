@@ -1,0 +1,34 @@
+@import '../variables';
+
+.ava-navbar {
+
+  & li:hover, a:hover {
+    background-color: transparent!important;
+  }  
+}
+
+.ava-navbar--tabs {
+  box-shadow: none!important;
+   
+  .nav-wrapper {
+    background-color: $color-primary;
+    z-index: 2;
+  }
+}
+
+.ava-navbar--tabs .ava-tabs {
+  position: relative;
+  z-index: 1;
+  top: -8px;
+  border-bottom-width: 0;
+  background-color: $color-primary;
+  @include shadow-2dp();
+  
+  & .ava-tabs__link {
+    color: rgba(255, 255, 255, 0.54)!important;
+    
+    &.active {
+      color: rgba(255, 255, 255, 1)!important;
+    }
+  }
+}

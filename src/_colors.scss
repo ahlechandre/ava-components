@@ -1,0 +1,37 @@
+@import 'mixins';
+
+/* DEFINITIONS */
+
+/* ALUNO */
+$aluno-primary: #3F51B5;
+$aluno-primary-dark: #303F9F;
+$aluno-primary-light: #C5CAE9;
+$aluno-accent: #E91E63;
+$aluno-accent-dark: #C2185B;
+/* SEDUC */
+$seduc-primary: #03A9F4;
+$seduc-primary-dark: #0288D1;
+$seduc-primary-light: #B3E5FC;
+$seduc-accent: #FFEB3B;
+$seduc-accent-dark: #FBC02D;
+/* PROFESSOR */
+$professor-primary: #673AB7;
+$professor-primary-dark: #512DA8;
+$professor-primary-light: #D1C4E9;
+$professor-accent: #FF5722;
+$professor-accent-dark: #E64A19;
+/* DIRETOR */
+$diretor-primary: #009688;
+$diretor-primary-dark: #00796B;
+$diretor-primary-light: #B2DFDB;
+$diretor-accent: #E040FB;
+$diretor-accent-dark: #7B1FA2;
+
+/* PALETTE */
+$color-blue: #2196F3;
+$color-primary: null !default;
+$color-primary-light: null !default;
+$color-primary-dark: null !default;
+$color-accent: null !default;
+$color-accent-dark: null !default;
+@include Palette('aluno');

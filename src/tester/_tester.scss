@@ -1,0 +1,141 @@
+@import '../variables';
+@import '../colors';
+
+/* TESTER */
+
+.ava-tester {
+  position: relative;
+  background-color: white;
+  border-radius: 3px;
+  overflow: hidden;
+  @include shadow-2dp();
+}
+
+/* TEST */
+
+.ava-test {
+  display: none;
+
+  /* ACTIVE */
+
+  &.is-active {
+    @include DisplayFlex();
+    flex-flow: column nowrap;        
+    @include Animation(FadeIn, 0.5s, ease-in-out);      
+  }
+  
+  /* TRANSITION */
+  
+  &.is-transition {
+    position: absolute;
+    top: 0;
+    z-index: 3;
+    @include DisplayFlex();
+    flex-flow: column nowrap;    
+    background-color: white; 
+    @include shadow-2dp();
+    
+    &.is-transition-next {
+      @include Animation(TranslateToLeft, 0.35s, ease-in-out);      
+    }
+  
+    &.is-transition-back {
+      @include Animation(TranslateToRight, 0.35s, ease-in-out);      
+    }
+  }   
+}
+
+/* TEST LABEL */
+
+.ava-test__label {
+  @include DisplayFlex();
+  padding: $tester-padding-length;
+}
+
+/* TEST LABEL INDICATOR */
+
+.ava-test__label-indicator {
+  order: 1;
+  margin-bottom: auto;
+  margin-right: 12px;
+  
+  & > .ava-test__label-indicator-item {
+    @include DisplayFlex();
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: $color-blue;
+    color: white;
+    font-size: 14px;
+    width: $tester-label-width;
+    height: $tester-label-width;
+  }
+}
+
+/* TEST LABEL TITLE */
+
+.ava-test__label-title {
+  order: 2;
+  margin: 0 ($tester-padding-length * 3) 0 0;
+
+  /* TITLE TEXT */
+  
+  & > .ava-test__label-title-text {
+    font-size: 18px;
+    line-height: 28px;
+    margin: 0 0 ($tester-padding-length / 2) 0;
+    font-weight: 500;
+    color: rgba(0,0,0,.84);
+  }
+
+  /* DESCRIPTION */
+  
+  & > .ava-test__label-description {
+    margin-top: 0;
+    font-size: 15px;
+  }
+}
+
+/* TEST LABEL SUPPORT */
+
+.ava-test__label-support {
+  position: absolute;
+  right: 12px;
+}
+
+/* CONTENT */
+
+.ava-test__content {
+  padding: $tester-padding-length $tester-padding-length $tester-padding-length (($tester-padding-length * 2) + $tester-label-width);  
+}
+
+/* ACTIONS */
+
+.ava-test__actions {
+  @include DisplayFlex();
+  border-top: 1px solid rgba(0,0,0,.1);
+  padding: $tester-padding-length;
+}
+
+/* ACTIONS BACK */
+
+.ava-test__actions > [data-test-back] {
+  order: 1;
+  margin-right: auto;  
+}
+
+/* ACTIONS SKIP */
+
+.ava-test__actions > [data-test-skip] {
+  order: 2;  
+  margin-left: auto;
+  margin-right: $tester-padding-length / 2;  
+}
+
+/* ACTIONS NEXT */
+
+.ava-test__actions > [data-test-complete] {
+  order: 3;  
+  box-shadow: none;
+  background-color: $color-blue!important;
+}

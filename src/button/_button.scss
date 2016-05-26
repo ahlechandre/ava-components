@@ -1,0 +1,18 @@
+@import '../variables';
+@import '../colors';
+
+.ava-button {
+  background-color: $color-primary;
+  
+  &:focus, &:hover, &:active {
+    background-color: $color-primary;    
+  }
+}
+
+.ava-button--flat {
+  background-color: transparent!important;
+  
+  &:focus, &:hover, &:active {
+    background-color: transparent!important;    
+  }
+}

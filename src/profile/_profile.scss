@@ -1,0 +1,60 @@
+@import '../variables';
+@import '../mixins';
+
+.ava-profile {
+  margin-top: 24px;  
+}
+
+.ava-profile__header {
+  position: relative;
+  text-align: center;
+  background-color: white;
+  border-radius: 3px;  
+  padding-bottom: 12px;
+  margin: 12px 0;
+}
+
+.ava-profile__header-background {
+  background-color: rgba(0, 0, 0, 0.3);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: $profile-header-background-height;
+}
+
+.ava-profile__avatar {}
+
+.ava-profile__avatar-image {
+  position: absolute;
+  top: $profile-header-background-height / 1.425;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 2; 
+  border: 3px solid white;
+  border-radius: 100%;  
+  width: 150px;
+  height: auto;
+}
+
+.ava-profile__title {
+  margin: 100px auto 12px auto;
+  width: 75%;
+}
+
+.ava-profile__title-text {
+  font-size: 2.8rem;
+  color: rgba(0, 0, 0, .84);
+  margin: 0;
+}
+
+.ava-profile__subtitle {
+  font-size: 1.3rem;
+  margin: 12px 0;
+}
+
+.ava-profile__email {
+  font-size: 1.2rem;
+  color: rgba(0,0,0,.54);
+  margin: 0 0 12px 0;
+}
