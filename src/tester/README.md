@@ -177,7 +177,7 @@ var tester = testerElement.AvaTester;
 ```
 
 Método | Efeito | Parâmetros | Retorno
----|---|---
+---|---|---|---
 `isActive(test)` | Verifica se uma questão está ativa. | test: <code>HTMLElement &#124; number</code> | `boolean`
 `isCompleted(test)` | Verifica se uma questão está completa/respondida. | test: <code>HTMLElement &#124; number</code> | `boolean`
 `setActive(test)` | Define uma questão como ativa. | test: <code>HTMLElement &#124; number</code> | `boolean`
