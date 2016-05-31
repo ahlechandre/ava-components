@@ -33,7 +33,19 @@
    */
   AvaDialogable.prototype._constants = {
     DATASET_URL: 'dialog-url',
+    DATASET_EXPIRES: 'dialog-expires',
     DATASET_URL_CAMEL: 'dialogUrl'
+  };
+
+  /**
+   * Defines the custom events.
+   * 
+   */
+  AvaDialogable.prototype._customEvents = {
+    onsuccess: new CustomEvent('onsuccess', {
+      bubbles: true,
+      cancelable: true,
+    }),
   };
 
   /**
@@ -110,19 +122,20 @@
   AvaDialogable.prototype._getAjaxOptions = function (url) {
     var onSuccess = function (response) {
       this._onRequestSuccess(response);
+      this.element.dispatchEvent(this._customEvents.onsuccess);
 
       if (typeof this.onContentSuccess === 'function') {
         this.onContentSuccess(response);
       }
     };
     var onComplete = function () {
-      
+
       if (typeof this.onContentComplete === 'function') {
         this.onContentComplete();
       }
     };
     var onError = function (err, status, throwErr) {
-      
+
       if (typeof this.onContentError === 'function') {
         this.onContentError(err, status, throwErr);
       }
@@ -134,7 +147,7 @@
       error: onError.bind(this),
       success: onSuccess.bind(this),
     };
-    
+
     return options;
   };
 
@@ -144,15 +157,35 @@
    * @param {object} response
    */
   AvaDialogable.prototype._onRequestSuccess = function (response) {
-    this._dialogContent.innerHTML = response;
+    // Javascript vanilla. 
+    // this._dialogContent.innerHTML = response; 
+    // jQuery inserts.
+    $(this._dialogContent).html(response);
 
     if (typeof Componentize !== 'undefined') {
       Componentize.upgradeAll();
     } else {
-      console.warn('Please, load Componentize to upgrade the components.'); 
+      console.warn('Please, load Componentize to upgrade the components.');
     }
+    this._setLoaded();
+  };
+
+  /**
+   * Defines the dialogable as loaded.
+   * 
+   */
+  AvaDialogable.prototype._setLoaded = function () {
     // Flag to check if content already is loaded.
     this._dialogContent.classList.add(this._cssClasses.DIALOG_CONTENT_LOADED);
+  };
+
+  /**
+   * Defines the dialogable as not loaded.
+   * 
+   */
+  AvaDialogable.prototype._unsetLoaded = function () {
+    // Flag to check if content already is loaded.
+    this._dialogContent.classList.remove(this._cssClasses.DIALOG_CONTENT_LOADED);
   };
 
   /**
@@ -176,26 +209,26 @@
    */
   AvaDialogable.prototype.getContent = function (optionalUrl) {
     var url /** @type {object} */;
-    var options /** @type {object} */; 
-    var datasetUrl = this.element.dataset[this._constants.DATASET_URL_CAMEL];
-    
+    var options /** @type {object} */;
+    var datasetUrl = this.element.getAttribute('data-' + this._constants.DATASET_URL);
+
     if (typeof optionalUrl === 'string' && optionalUrl.length) {
-      url = optionalUrl;      
-    }    
+      url = optionalUrl;
+    }
     else if (datasetUrl && datasetUrl.length) {
-      url = datasetUrl;           
+      url = datasetUrl;
     }
     else if (typeof this.contentUrl === 'string' && this.contentUrl.length) {
-      url = this.contentUrl;      
+      url = this.contentUrl;
     }
     else {
       return;
     }
-    
+
     options = this._getAjaxOptions(url);
     this._sendAjaxRequest(options);
   };
-  
+
   /**
    * Check if dialog content is already loaded.
    * 
@@ -204,7 +237,16 @@
   AvaDialogable.prototype.isLoaded = function () {
     return this._dialogContent.classList.contains(this._cssClasses.DIALOG_CONTENT_LOADED);
   };
-  
+
+  /**
+   * Check if dialog content must expires.
+   * 
+   * @return {boolean}
+   */
+  AvaDialogable.prototype.isExpires = function () {
+    return (this.element.getAttribute('data-' + this._constants.DATASET_EXPIRES) !== null);
+  };
+
   /**
    * Disable default behavior.
    * 
@@ -212,7 +254,7 @@
   AvaDialogable.prototype.disableDefaultBehavior = function () {
     this._defaultBehavior = false;
   };
-  
+
   /**
    * Enable default behavior.
    * 
@@ -220,15 +262,36 @@
   AvaDialogable.prototype.enableDefaultBehavior = function () {
     this._defaultBehavior = true;
   };
-  
+
   /**
    * Event listener to element on click.
    * 
    */
   AvaDialogable.prototype._elementOnClick = function (event) {
-    
-    if (this._defaultBehavior && !this.isLoaded()) {
-      this.getContent();    
+
+    if ((this._defaultBehavior && !this.isLoaded()) || this.isExpires()) {
+      this.getContent();
+    }
+  };
+
+  /**
+   * Event listener to dialog element on open.
+   * 
+   */
+  AvaDialogable.prototype._dialogOnReady = function (event) { };
+
+  /**
+   * Event listener to dialog element on close.
+   * 
+   */
+  AvaDialogable.prototype._dialogOnClose = function (event) {
+
+    if (this.isExpires()) {
+      // Removes the content on close if the dialogable must expires.
+      while (this._dialogContent.firstChild) {
+        this._dialogContent.removeChild(this._dialogContent.firstChild);
+      }      
+      this._unsetLoaded();
     }
   };
 
@@ -253,6 +316,8 @@
     }
 
     this.element.addEventListener('click', this._elementOnClick.bind(this));
+    this._dialog.addEventListener('onready', this._dialogOnReady.bind(this));
+    this._dialog.addEventListener('onclose', this._dialogOnClose.bind(this));
   };
 
   // Registers the component. "Componentize" object must be available globally.

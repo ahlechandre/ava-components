@@ -10,6 +10,10 @@
 /* DIRETOR */
 /* PALETTE COLORS */
 /* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE DIRETOR */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
@@ -63,6 +67,29 @@
   100% {
     -moz-transform: translate(100%, 0);
     transform: translate(100%, 0); } }
+/* DISPLAY FLEX */
+/* TRANSLATE 2D */
+/* PALETTE */
+/* ANIMATION */
+/* SHADOW */
+/* DEFINITIONS */
+/* ALUNO */
+/* SEDUC */
+/* PROFESSOR */
+/* DIRETOR */
+/* PALETTE COLORS */
+/* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE DIRETOR */
+/* SHADOWS */
+/* PROFILE */
+/* TESTER */
+/* CONTENT */
+.ava-content {
+  margin: 0; }
+
 /* fallback */
 @font-face {
   font-family: 'Material Icons';
@@ -96,6 +123,10 @@
 /* DIRETOR */
 /* PALETTE COLORS */
 /* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE DIRETOR */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
@@ -142,6 +173,10 @@
 /* DIRETOR */
 /* PALETTE COLORS */
 /* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE DIRETOR */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
@@ -172,6 +207,10 @@
 /* DIRETOR */
 /* PALETTE COLORS */
 /* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE DIRETOR */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
@@ -207,6 +246,10 @@
 /* DIRETOR */
 /* PALETTE COLORS */
 /* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE DIRETOR */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
@@ -304,6 +347,10 @@
 /* DIRETOR */
 /* PALETTE COLORS */
 /* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE DIRETOR */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
@@ -319,15 +366,27 @@
 /* DIRETOR */
 /* PALETTE COLORS */
 /* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE DIRETOR */
+/* PRIMARY */
 .ava-button {
   background-color: #3F51B5; }
   .ava-button:focus, .ava-button:hover, .ava-button:active {
     background-color: #3F51B5; }
 
+/* FLAT */
 .ava-button--flat {
   background-color: transparent !important; }
   .ava-button--flat:focus, .ava-button--flat:hover, .ava-button--flat:active {
     background-color: transparent !important; }
+
+/* ACCENT */
+.ava-button--accent {
+  color: white; }
+  .ava-button--accent i {
+    color: inherit; }
 
 /* DISPLAY FLEX */
 /* TRANSLATE 2D */
@@ -341,6 +400,10 @@
 /* DIRETOR */
 /* PALETTE COLORS */
 /* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE DIRETOR */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
@@ -377,6 +440,10 @@
 /* DIRETOR */
 /* PALETTE COLORS */
 /* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE DIRETOR */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
@@ -437,6 +504,10 @@
 /* DIRETOR */
 /* PALETTE COLORS */
 /* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE DIRETOR */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
@@ -452,6 +523,10 @@
 /* DIRETOR */
 /* PALETTE COLORS */
 /* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE DIRETOR */
 /* TESTER */
 .ava-tester {
   position: relative;
@@ -648,4 +723,69 @@
   color: rgba(0, 0, 0, 0.54);
   font-weight: bold; }
 
-/*# sourceMappingURL=ava.css.map */
+/* DISPLAY FLEX */
+/* TRANSLATE 2D */
+/* PALETTE */
+/* ANIMATION */
+/* SHADOW */
+/* DEFINITIONS */
+/* ALUNO */
+/* SEDUC */
+/* PROFESSOR */
+/* DIRETOR */
+/* PALETTE COLORS */
+/* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE DIRETOR */
+/* SHADOWS */
+/* PROFILE */
+/* TESTER */
+/* TEXTFIELD */
+.ava-textfield .prefix.active {
+  color: #3F51B5 !important; }
+
+/* INPUT */
+.ava-textfield__input:focus {
+  border-bottom: 1px solid #3F51B5 !important;
+  box-shadow: 0 1px 0 0 #3F51B5 !important;
+  /* LABEL ON FOCUS */ }
+  .ava-textfield__input:focus + .ava-textfield__label {
+    color: #3F51B5 !important; }
+
+/* LABEL */
+/* DISPLAY FLEX */
+/* TRANSLATE 2D */
+/* PALETTE */
+/* ANIMATION */
+/* SHADOW */
+/* DEFINITIONS */
+/* ALUNO */
+/* SEDUC */
+/* PROFESSOR */
+/* DIRETOR */
+/* PALETTE COLORS */
+/* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE DIRETOR */
+/* SHADOWS */
+/* PROFILE */
+/* TESTER */
+/* DATEFIELD */
+.ava-datefield .prefix.active {
+  color: #3F51B5 !important; }
+
+/* INPUT */
+.ava-datefield__input:focus {
+  border-bottom: 1px solid #3F51B5 !important;
+  box-shadow: 0 1px 0 0 #3F51B5 !important;
+  /* LABEL ON FOCUS */ }
+  .ava-datefield__input:focus + .ava-datefield__label {
+    color: #3F51B5 !important; }
+
+/* LABEL */
+
+/*# sourceMappingURL=ava.aluno.css.map */

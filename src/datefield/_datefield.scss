@@ -1,0 +1,30 @@
+@import '../variables';
+
+/* DATEFIELD */
+
+.ava-datefield {
+  
+  & .prefix.active {    
+      color: $color-primary!important;    
+  }
+}
+
+/* INPUT */
+
+.ava-datefield__input {
+  
+  &:focus {
+    border-bottom: 1px solid $color-primary!important;
+    box-shadow: 0 1px 0 0 $color-primary!important;
+    
+    /* LABEL ON FOCUS */
+
+    & + .ava-datefield__label { 
+      color: $color-primary!important;    
+    }
+  }   
+}
+
+/* LABEL */
+
+.ava-datefield__label {}

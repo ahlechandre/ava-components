@@ -37,6 +37,8 @@
     IS_TRANSITION: 'is-transition',
     IS_TRANSITION_NEXT: 'is-transition-next',
     IS_TRANSITION_BACK: 'is-transition-back',
+    ACTIVATOR_NAV: 'ava-tester__activator',
+    ACTIVATOR_ITEM: 'ava-tester__activator-item',
   };
 
   /**
@@ -47,6 +49,7 @@
     DATASET_ACTION_COMPLETE: 'test-complete',
     DATASET_ACTION_BACK: 'test-back',
     DATASET_ACTION_SKIP: 'test-skip',
+    DATASET_ACTIVATOR_ACTIVATES: 'tester-activates',
   };
 
   /**
@@ -104,6 +107,10 @@
    * 
    */
   AvaTester.prototype._customEvents = {
+    ongoto: new CustomEvent('ongoto', {
+      bubbles: true,
+      cancelable: true,
+    }),
     onback: new CustomEvent('onback', {
       bubbles: true,
       cancelable: true,
@@ -133,23 +140,23 @@
    * @return {boolean}
    */
   AvaTester.prototype.isCompleted = function (test) {
-    var element; 
+    var element;
     var _test;
-    
+
     if (typeof test === 'number') {
       _test = this._getTest(test);
-      
+
       if (_test) {
-        element = _test.element; 
+        element = _test.element;
       } else {
         return false;
-      }       
+      }
     } else if (test instanceof HTMLElement) {
       element = test;
     } else {
       return false;
     }
-    
+
     return element.classList.contains(this._cssClasses.TEST_COMPLETED);
   };
 
@@ -252,9 +259,9 @@
   AvaTester.prototype.getTestElementByIndex = function (index) {
     var test = this._getTest(index);
     var element = null;
-    
+
     if (test) element = test.element;
-    
+
     return element;
   };
 
@@ -487,7 +494,8 @@
       }
       // Defines the old test as complete after this proccess.
       this._setCompletedTest(oldIndex);
-
+      this._updateActivators();
+      
       if (this.isAllCompleted()) {
         // Dispatch on end event.
         this._dispatchEvent(this.element, 'onend');
@@ -498,11 +506,11 @@
   };
 
   /**
-   * Goes back to the previous test at list.
+   * Goes back to the previous test that must be completed at list.
    * 
    * @return {boolean}
    */
-  AvaTester.prototype.back = function () {
+  AvaTester.prototype.skipBack = function () {
     var oldIndex = this._tester.activeIndex;
     var newIndex = this.searchIndex(0, (oldIndex - 1), 'back');
     var didBack = this.setActive(newIndex);
@@ -517,6 +525,19 @@
     }
 
     return didBack;
+  };
+
+  /**
+   * Goes back to the previous test at list.
+   * 
+   * @return {boolean}
+   */
+  AvaTester.prototype.back = function () {
+    var prev = this.getActiveIndex() - 1;
+
+    if (prev === 0) prev = this.getTestsSize();
+
+    return this.goto(prev);
   };
 
   /** 
@@ -543,6 +564,7 @@
 
       if (oldIndex !== newIndex) {
         this._createTransition(oldIndex, 'next');
+        this._updateActivators();
       } else {
         didSkip = false;
       }
@@ -573,6 +595,9 @@
         this._createTransition(activeIndex, direction);
         // Uncomplete the new activated test to trigger complete event.
         this._setUncompletedTest(newIndex);
+        this._updateActivators();
+        this._dispatchEvent(this._tester.element, 'ongoto');
+        this._dispatchEvent(test.element, 'ongoto');
       } else {
         activated = false;
       }
@@ -715,6 +740,8 @@
     var total = 0;
     var totalCompleted = 0;
     var testElements = this.element.querySelectorAll('.' + this._cssClasses.TEST);
+    var activatorNav = this.element.querySelector('.' + this._cssClasses.ACTIVATOR_NAV);
+    var activatorItems = activatorNav ? activatorNav.querySelectorAll('.' + this._cssClasses.ACTIVATOR_ITEM) : [];
     var i;
 
     for (i = 0; i < testElements.length; i++) {
@@ -740,9 +767,13 @@
       tests: tests,
       total: total,
       totalCompleted: totalCompleted,
+      activator: {
+        element: activatorNav,
+        items: activatorItems,
+      }
     };
   };
-  
+
   /**
    * Returns the tests list assigned by index.
    * 
@@ -751,14 +782,14 @@
   AvaTester.prototype.getTestsList = function () {
     var list = {};
     var i;
-    
+
     for (i = 0; i < this._tests.length; i++) {
       list[this._tests[i].index] = this._tests[i].element;
     }
-    
+
     return list;
   };
-  
+
   /**
    * Defines the event dispatched on click on complete test button. 
    * 
@@ -871,8 +902,72 @@
     this._setEventOnSkip();
     this._setEventOnBack();
     this._setEventOnSupport();
+    this._setEventActivators();
   };
+  
+  /**
+   * Defines the activors links behavior.
+   * 
+   */
+  AvaTester.prototype._setEventActivators = function () {
+    var activatorItem /** @type {HTMLElement} */;
+    var i;
+    
+    if (!this._tester.activator.element) return;
 
+    for (i = 0; i < this._tester.activator.items.length; i++) {
+      activatorItem = this._tester.activator.items[i];
+      
+      activatorItem.addEventListener('click', function (event) {
+        var activates /** @type {string} */;
+        event.preventDefault();
+        
+        if (event.target) {
+          activates = event.target.getAttribute('data-' + this._constants.DATASET_ACTIVATOR_ACTIVATES);
+        } else {
+          return;
+        }   
+        activates = parseInt(activates);   
+         
+        if (!activates) return;
+        
+        this.goto(activates);
+      }.bind(this));
+    }
+  };
+  
+  /**
+   * Updates the activator items state.
+   * 
+   */
+  AvaTester.prototype._updateActivators = function () {
+    var i;
+    var activatorItem /** @type {HTMLElement} */;
+    var activatorSelector /** @type {string} */;
+    
+    if (typeof this._tester['activator'] === 'undefined' || !this._tester.activator.element) return;
+        
+    for (i = 0; i < this._tests.length; i++) {
+      activatorSelector = '[data-' + this._constants.DATASET_ACTIVATOR_ACTIVATES + '="' + this._tests[i].index + '"]';
+      activatorItem = this._tester.activator.element.querySelector(activatorSelector);
+      
+      if (!activatorItem) continue;
+      // Check if test is completed.
+      if (this._tests[i].completed) {
+        activatorItem.classList.add(this._cssClasses.TEST_COMPLETED);
+      } else {
+        activatorItem.classList.remove(this._cssClasses.TEST_COMPLETED);        
+      }     
+
+      // Check if test is actives.
+      if (this._tests[i].index === this._tester.activeIndex) {
+        activatorItem.classList.add(this._cssClasses.TEST_ACTIVE);
+      } else {
+        activatorItem.classList.remove(this._cssClasses.TEST_ACTIVE);
+      }     
+    }
+  };
+  
   /**
    * Initializes the instance.
    * 
@@ -888,6 +983,7 @@
     delete testerConfig['tests'];
     this._tester = testerConfig;
     this._setEvents();
+    this._updateActivators();
   };
 
   // Registers the component. "Componentize" object must be available globally.

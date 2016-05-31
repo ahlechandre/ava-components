@@ -40,7 +40,17 @@
   AvaSelect.prototype._isCreated = function () {
     return this.element.classList.contains(this._cssClasses.IS_CREATED);
   };
-
+  
+  /**
+   * Selects an option.
+   * 
+   * @param {string} value
+   */
+  AvaSelect.prototype.select = function (value) {
+    this.element.value = value;
+    this.update();
+  };
+  
   /**
    * Initializes the select.
    * 

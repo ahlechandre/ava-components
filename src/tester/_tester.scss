@@ -11,6 +11,9 @@
   @include shadow-2dp();
 }
 
+/* TESTS */
+.ava-tester__tests {}
+
 /* TEST */
 
 .ava-test {
@@ -138,4 +141,74 @@
   order: 3;  
   box-shadow: none;
   background-color: $color-blue!important;
+}
+
+/* ACTIVATORS */
+
+.ava-tester__activator {
+  @include DisplayFlex();
+  justify-content: center;
+  align-items: center;
+  margin: $tester-padding-length * 2;
+  color: initial;
+  background: initial;
+  width: initial;
+  height: initial;
+  line-height: initial;
+  box-shadow: initial;
+}
+
+/* ACTIVATOR ITEM */
+
+.ava-tester__activator-item {
+  @include DisplayFlex();
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  font-size: 14px;
+  width: $tester-label-width;
+  height: $tester-label-width;
+  margin: 0 ($tester-label-width / 4);
+  background-color: white;
+  color: $color-blue;
+  border: 2px solid $color-blue-light; 
+  
+  &.is-completed {
+    border-color: $color-blue;       
+    background-color: $color-blue;
+    color: white;
+  } 
+   
+  &.is-active {
+    border-color: $color-blue;       
+  }  
+  
+  &:hover, &:focus {
+    outline: none;
+    border-color: $color-blue; 
+  } 
+}
+
+/* PROGRESS */
+.ava-tester__progress {
+  @include DisplayFlex();
+  flex-flow: column nowrap;
+  width: 100%;
+  margin-top: $tester-padding-length;
+}
+
+.ava-tester__progress-bar {
+  @include DisplayFlex();
+  width: 0;
+  background-color: $color-blue;
+  padding: $tester-padding-length / 2;
+  transition: 0.35s width linear;
+}
+
+.ava-tester__progress-percent {
+  @include DisplayFlex();
+  margin: 0 $tester-padding-length ($tester-padding-length / 2) auto;
+  font-size: 14px;
+  color: rgba(0,0,0,.54);
+  font-weight: bold;
 }

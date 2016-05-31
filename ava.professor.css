@@ -10,6 +10,10 @@
 /* DIRETOR */
 /* PALETTE COLORS */
 /* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE DIRETOR */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
@@ -63,6 +67,29 @@
   100% {
     -moz-transform: translate(100%, 0);
     transform: translate(100%, 0); } }
+/* DISPLAY FLEX */
+/* TRANSLATE 2D */
+/* PALETTE */
+/* ANIMATION */
+/* SHADOW */
+/* DEFINITIONS */
+/* ALUNO */
+/* SEDUC */
+/* PROFESSOR */
+/* DIRETOR */
+/* PALETTE COLORS */
+/* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE DIRETOR */
+/* SHADOWS */
+/* PROFILE */
+/* TESTER */
+/* CONTENT */
+.ava-content {
+  margin: 0; }
+
 /* fallback */
 @font-face {
   font-family: 'Material Icons';
@@ -96,13 +123,17 @@
 /* DIRETOR */
 /* PALETTE COLORS */
 /* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE DIRETOR */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
 /* PANEL */
 .ava-section__panel {
   position: relative;
-  background-color: #303F9F;
+  background-color: #512DA8;
   width: 100%;
   min-height: 180px;
   padding: 24px;
@@ -142,6 +173,10 @@
 /* DIRETOR */
 /* PALETTE COLORS */
 /* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE DIRETOR */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
@@ -172,6 +207,10 @@
 /* DIRETOR */
 /* PALETTE COLORS */
 /* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE DIRETOR */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
@@ -207,6 +246,10 @@
 /* DIRETOR */
 /* PALETTE COLORS */
 /* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE DIRETOR */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
@@ -304,6 +347,10 @@
 /* DIRETOR */
 /* PALETTE COLORS */
 /* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE DIRETOR */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
@@ -319,15 +366,27 @@
 /* DIRETOR */
 /* PALETTE COLORS */
 /* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE DIRETOR */
+/* PRIMARY */
 .ava-button {
-  background-color: #3F51B5; }
+  background-color: #673AB7; }
   .ava-button:focus, .ava-button:hover, .ava-button:active {
-    background-color: #3F51B5; }
+    background-color: #673AB7; }
 
+/* FLAT */
 .ava-button--flat {
   background-color: transparent !important; }
   .ava-button--flat:focus, .ava-button--flat:hover, .ava-button--flat:active {
     background-color: transparent !important; }
+
+/* ACCENT */
+.ava-button--accent {
+  color: white; }
+  .ava-button--accent i {
+    color: inherit; }
 
 /* DISPLAY FLEX */
 /* TRANSLATE 2D */
@@ -341,6 +400,10 @@
 /* DIRETOR */
 /* PALETTE COLORS */
 /* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE DIRETOR */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
@@ -350,7 +413,7 @@
 .ava-navbar--tabs {
   box-shadow: none !important; }
   .ava-navbar--tabs .nav-wrapper {
-    background-color: #3F51B5;
+    background-color: #673AB7;
     z-index: 2; }
 
 .ava-navbar--tabs .ava-tabs {
@@ -358,7 +421,7 @@
   z-index: 1;
   top: -8px;
   border-bottom-width: 0;
-  background-color: #3F51B5;
+  background-color: #673AB7;
   box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12); }
   .ava-navbar--tabs .ava-tabs .ava-tabs__link {
     color: rgba(255, 255, 255, 0.54) !important; }
@@ -377,6 +440,10 @@
 /* DIRETOR */
 /* PALETTE COLORS */
 /* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE DIRETOR */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
@@ -385,7 +452,7 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   height: auto; }
   .ava-tabs .indicator {
-    background-color: #E91E63;
+    background-color: #FF5722;
     height: 3px; }
   .ava-tabs .ava-tabs__item {
     height: auto; }
@@ -423,7 +490,7 @@
   display: -ms-flex !important;
   display: flex !important; }
   .ava-tabs__link.active {
-    color: #E91E63 !important; }
+    color: #FF5722 !important; }
 
 /* DISPLAY FLEX */
 /* TRANSLATE 2D */
@@ -437,6 +504,10 @@
 /* DIRETOR */
 /* PALETTE COLORS */
 /* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE DIRETOR */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
@@ -452,6 +523,10 @@
 /* DIRETOR */
 /* PALETTE COLORS */
 /* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE DIRETOR */
 /* TESTER */
 .ava-tester {
   position: relative;
@@ -648,4 +723,69 @@
   color: rgba(0, 0, 0, 0.54);
   font-weight: bold; }
 
-/*# sourceMappingURL=ava.css.map */
+/* DISPLAY FLEX */
+/* TRANSLATE 2D */
+/* PALETTE */
+/* ANIMATION */
+/* SHADOW */
+/* DEFINITIONS */
+/* ALUNO */
+/* SEDUC */
+/* PROFESSOR */
+/* DIRETOR */
+/* PALETTE COLORS */
+/* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE DIRETOR */
+/* SHADOWS */
+/* PROFILE */
+/* TESTER */
+/* TEXTFIELD */
+.ava-textfield .prefix.active {
+  color: #673AB7 !important; }
+
+/* INPUT */
+.ava-textfield__input:focus {
+  border-bottom: 1px solid #673AB7 !important;
+  box-shadow: 0 1px 0 0 #673AB7 !important;
+  /* LABEL ON FOCUS */ }
+  .ava-textfield__input:focus + .ava-textfield__label {
+    color: #673AB7 !important; }
+
+/* LABEL */
+/* DISPLAY FLEX */
+/* TRANSLATE 2D */
+/* PALETTE */
+/* ANIMATION */
+/* SHADOW */
+/* DEFINITIONS */
+/* ALUNO */
+/* SEDUC */
+/* PROFESSOR */
+/* DIRETOR */
+/* PALETTE COLORS */
+/* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE DIRETOR */
+/* SHADOWS */
+/* PROFILE */
+/* TESTER */
+/* DATEFIELD */
+.ava-datefield .prefix.active {
+  color: #673AB7 !important; }
+
+/* INPUT */
+.ava-datefield__input:focus {
+  border-bottom: 1px solid #673AB7 !important;
+  box-shadow: 0 1px 0 0 #673AB7 !important;
+  /* LABEL ON FOCUS */ }
+  .ava-datefield__input:focus + .ava-datefield__label {
+    color: #673AB7 !important; }
+
+/* LABEL */
+
+/*# sourceMappingURL=ava.professor.css.map */

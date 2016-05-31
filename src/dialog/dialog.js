@@ -28,7 +28,23 @@
    * 
    */
   AvaDialog.prototype._constants = {};
-  
+
+
+  /**
+   * Defines the custom events used by this component. 
+   * 
+   */
+  AvaDialog.prototype._customEvents = {
+    onready: new CustomEvent('onready', {
+      bubbles: true,
+      cancelable: true,
+    }),
+    onclose: new CustomEvent('onclose', {
+      bubbles: true,
+      cancelable: true,
+    }),
+  };
+
   /**
    * Initializes the dialog component.
    * 
@@ -36,13 +52,25 @@
   AvaDialog.prototype.create = function () {
     var triggerElementHref = '#' + this.element.getAttribute('id');
     var triggerElement = document.querySelector('[href="' + triggerElementHref + '"]');
-    
+    var onReady;
+    var onComplete;
+
     if (!triggerElement) return;
     
+    onReady = function () {
+      this.element.dispatchEvent(this._customEvents.onready);
+    };
+    onComplete = function () {
+      this.element.dispatchEvent(this._customEvents.onclose);      
+    };
+    
     // jQuery initialization.
-    $(triggerElement).leanModal();    
+    $(triggerElement).leanModal({
+      ready: onReady.bind(this),
+      complete: onComplete.bind(this),
+    });
   };
-  
+
   /**
    * Initializes the instance.
    * 
@@ -55,7 +83,7 @@
       console.warn('Please, load jQuery. Dialog Component has jQuery as dependency.');
       return;
     }
-    
+
     // Initializes the dialog.
     this.create();
   };

@@ -25,24 +25,28 @@
     $color-primary-dark: $aluno-primary-dark !global;
     $color-accent: $aluno-accent !global;
     $color-accent-dark: $aluno-accent-dark !global;
+    $color-text-icons: $aluno-color-text-icons !global;
   } @else if ($custom == 'seduc') {
     $color-primary: $seduc-primary !global;
     $color-primary-light: $seduc-primary-light !global;
     $color-primary-dark: $seduc-primary-dark !global;
     $color-accent: $seduc-accent !global;
     $color-accent-dark: $seduc-accent-dark !global;
+    $color-text-icons: $seduc-color-text-icons !global;
   } @else if ($custom == 'professor') {
     $color-primary: $professor-primary !global;
     $color-primary-light: $professor-primary-light !global;
     $color-primary-dark: $professor-primary-dark !global;
     $color-accent: $professor-accent !global;
     $color-accent-dark: $professor-accent-dark !global;
+    $color-text-icons: $professor-color-text-icons !global;
   } @else if ($custom == 'diretor') {
     $color-primary: $diretor-primary !global;
     $color-primary-light: $diretor-primary-light !global;
     $color-primary-dark: $diretor-primary-dark !global;
     $color-accent: $diretor-accent !global;
     $color-accent-dark: $diretor-accent-dark !global;
+    $color-text-icons: $diretor-color-text-icons !global;
   }  
 }
 
