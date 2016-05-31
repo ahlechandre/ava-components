@@ -82,8 +82,7 @@
   /**
    * Defines label as active.
    * 
-   */
-  AvaTextfield.prototype._unsetActiveLabel = function () {
+   */  AvaTextfield.prototype._unsetActiveLabel = function () {
     return this._label.classList.remove(this._cssClasses.LABEL_ACTIVE_MATERIALIZE);
   };
 
@@ -127,8 +126,8 @@
    * 
    */
   AvaTextfield.prototype.setValue = function (value) {
-    this.update();
     this._input.value = value;
+    this.update();
   };
   
   /**

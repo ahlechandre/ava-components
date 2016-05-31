@@ -95,13 +95,12 @@
   /**
    * Defines label as active.
    * 
-   */
-  AvaDatefield.prototype._unsetActiveLabel = function () {
+   */  AvaDatefield.prototype._unsetActiveLabel = function () {
     return this._label.classList.remove(this._cssClasses.LABEL_ACTIVE_MATERIALIZE);
   };
 
   /**
-   * Initializes the textfield.
+   * Initializes the datefield.
    * 
    */
   AvaDatefield.prototype.create = function () {
@@ -112,7 +111,7 @@
   };
 
   /**
-   * Destroy the textfield.
+   * Destroy the datefield.
    * 
    */
   AvaDatefield.prototype.destroy = function () {
@@ -120,7 +119,7 @@
   };
 
   /**
-   * Update the textfield.
+   * Update the datefield.
    * 
    */
   AvaDatefield.prototype.update = function () {
@@ -129,7 +128,7 @@
   };
 
   /**
-   * Clear the textfield.
+   * Clear the datefield.
    * 
    */
   AvaDatefield.prototype.clear = function () {
@@ -156,7 +155,7 @@
   };
 
   /**
-   * Clear the textfield.
+   * Defines the value of datefield.
    * 
    * @param {string} value
    */
@@ -202,7 +201,7 @@
     if (!this.element) return;
 
     if (typeof $ === 'undefined' || typeof jQuery === 'undefined') {
-      console.warn('Please, load jQuery. Textfield Component has jQuery as dependency.');
+      console.warn('Please, load jQuery. Datefield Component has jQuery as dependency.');
       return;
     }
 

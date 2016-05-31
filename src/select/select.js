@@ -10,7 +10,7 @@
    * 
    * @class
    */
-  function AvaSelect(element) {
+  function AvaSelectfield(element) {
     this.element = element;
     
     // Initializes the instance.
@@ -21,8 +21,9 @@
    * Stories the css classes used by this component.
    * 
    */
-  AvaSelect.prototype._cssClasses = {
-    COMPONENT: 'ava-select',
+  AvaSelectfield.prototype._cssClasses = {
+    SELECT: 'ava-selectfield__select',
+    LABEL: 'ava-selectfield__label',
     IS_CREATED: 'is-created'
   };
 
@@ -30,14 +31,47 @@
    * Stories the constant strings used by this component.
    * 
    */
-  AvaSelect.prototype._constants = {};
+  AvaSelectfield.prototype._constants = {};
+
+
+  /**
+   * Stories the select element used by this component.
+   * 
+   * @type {HTMLElement}
+   */
+  AvaSelectfield.prototype._select = {};
+
+  /**
+   * Stories the label element used by this component.
+   * 
+   * @type {HTMLElement}
+   */
+  AvaSelectfield.prototype._label = {};
+  
+  /**
+   * Returns the select element used by this component.
+   * 
+   * @return {HTMLElement}
+   */
+  AvaSelectfield.prototype._getSelect = function () {
+    return this.element.querySelector('select.' + this._cssClasses.SELECT);
+  };
+
+  /**
+   * Returns the label element used by this component.
+   * 
+   * @return {HTMLElement}
+   */
+  AvaSelectfield.prototype._getLabel = function () {
+    return this.element.querySelector('.' + this._cssClasses.LABEL);
+  };
 
   /**
    * Check if the select already is initialized.
    * 
    * @return {boolean}
    */
-  AvaSelect.prototype._isCreated = function () {
+  AvaSelectfield.prototype._isCreated = function () {
     return this.element.classList.contains(this._cssClasses.IS_CREATED);
   };
   
@@ -46,21 +80,30 @@
    * 
    * @param {string} value
    */
-  AvaSelect.prototype.select = function (value) {
-    this.element.value = value;
+  AvaSelectfield.prototype.select = function (value) {
+    this._select.value = value;
     this.update();
+  };
+  
+  /**
+   * Returns the current value of select.
+   * 
+   * @return {string}
+   */
+  AvaSelectfield.prototype.getValue = function () {
+    return this._select.value;
   };
   
   /**
    * Initializes the select.
    * 
    */
-  AvaSelect.prototype.create = function () {
+  AvaSelectfield.prototype.create = function () {
 
     if (this._isCreated()) return;
 
     // jQuery initialization.
-    $(this.element).material_select();
+    $(this._select).material_select();
     this.element.classList.add(this._cssClasses.IS_CREATED);
   };
 
@@ -68,12 +111,12 @@
    * Destroys the select.
    * 
    */
-  AvaSelect.prototype.destroy = function () {
+  AvaSelectfield.prototype.destroy = function () {
 
     if (!this._isCreated()) return;
         
     // jQuery initialization.
-    $(this.element).material_select('destroy');
+    $(this._select).material_select('destroy');
     this.element.classList.remove(this._cssClasses.IS_CREATED);
   };
 
@@ -81,48 +124,36 @@
    * Destroys and initializes the select.
    * 
    */
-  AvaSelect.prototype.update = function () {
+  AvaSelectfield.prototype.update = function () {
     this.destroy();
     this.create();
   };
-  
-  /**
-   * Defines the real element used by component. 
-   * 
-   */
-  AvaSelect.prototype.setElement = function () {
-    var selectElement /** @type {HTMLElement | undefined} */;
 
-    // Materialize clones the select element class list in a parent node.
-    // Issue described: <https://github.com/Dogfalo/materialize/issues/3199 /> 
-    if (this.element.tagName === 'DIV') {
-      selectElement = this.element.querySelector('.' + this._cssClasses.COMPONENT);
-      this.element = selectElement;
-    }
-  };
-  
   /**
    * Initializes the instance.
    * 
    */
-  AvaSelect.prototype.init = function () {
+  AvaSelectfield.prototype.init = function () {
 
     if (!this.element) return;
-    
-    this.setElement();
     
     if (typeof $ === 'undefined' || typeof jQuery === 'undefined') {
       console.warn('Please, load jQuery. Select Component has jQuery as dependency.');
       return;
     }
+    this._select = this._getSelect();
+    this._label = this._getLabel();
+  
+    if (!this._select) return;    
+    
     // Initial initialization.
     this.create();
   };
 
   // Registers the component. "Componentize" object must be available globally.
   Componentize.register({
-    name: 'AvaSelect',
-    constructor: AvaSelect,
-    cssClass: 'ava-select',
+    name: 'AvaSelectfield',
+    constructor: AvaSelectfield,
+    cssClass: 'ava-selectfield',
   });
 })();
