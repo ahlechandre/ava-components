@@ -7,3 +7,4 @@
 * [textfield](src/textfield/README.md)
 * [timer](src/timer/README.md)
 * [selectfield](src/selectfield/README.md)
+* [slider](src/slider/README.md)
