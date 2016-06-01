@@ -1,0 +1,26 @@
+{
+  "name": "ava",
+  "version": "0.0.5",
+  "description": "ava components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "./node_modules/.bin/webpack",
+    "prod": "NODE_ENV=production ./node_modules/.bin/webpack",
+    "prod_windows": "set \"NODE_ENV=production\" && \"./node_modules/.bin/webpack\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahlechandre/ava-components.git"
+  },
+  "author": "Alexandre Thebaldi",
+  "license": "MIT",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/ahlechandre/ava-components/issues"
+  },
+  "homepage": "https://github.com/ahlechandre/ava-components#readme",
+  "devDependencies": {
+    "webpack": "^1.13.1"
+  }
+}
