@@ -2,6 +2,7 @@
 
 * [datefield](src/datefield/README.md)
 * [dialogable](src/dialogable/README.md)
+* [expandable](src/expandable/README.md)
 * [tabs](src/tabs/README.md)
 * [tester](src/tester/README.md)
 * [textfield](src/textfield/README.md)
