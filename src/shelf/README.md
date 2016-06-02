@@ -15,7 +15,7 @@ Insira as ações para mover o conteúdo para esquerda (`.ava-shelf__action-left
   <a href="#" class="ava-shelf__action-right">goes to right</a>
 </div>
 ```
-Coloque o conteúdo a ser disponibiliza dentro da classe `ava-shelf__content`:
+Coloque o conteúdo a ser disponibilizado dentro da classe `ava-shelf__content`:
 ```html
 <div class="ava-shelf">
   <a href="#" class="ava-shelf__action-left">goes to left</a>

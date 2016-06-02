@@ -1256,7 +1256,9 @@
 	   * @param {chartHandler.ChartConfig.containerSelector} 
 	   */
 	  var _render = function (containerSelector) {
-
+	  
+	    if (typeof google === 'undefined') return;
+	        
 	    if (typeof (google.visualization) === 'undefined') {
 	      // Google charts library was not loaded yet.
 	      google.charts.setOnLoadCallback((function () {
@@ -1334,6 +1336,8 @@
 	   */
 	  var _renderAll = function () {
 
+	    if (typeof google === 'undefined') return;
+
 	    if (typeof (google.visualization) === 'undefined') {
 	      // Google charts library was not loaded yet.
 	      google.charts.setOnLoadCallback((function () {
@@ -1393,7 +1397,7 @@
 	    // Waits 1 second and try to load packages.
 	    setTimeout(function () {
 	      _loadPackages();
-	      console.warn('By default, chartHandler was forced to load Google charts library. We recommend that you must define manually this. Please, visit the Google charts website and see how include their script in your page.');
+	      console.warn('chartHandler was forced to load Google charts library. We recommend that you must define manually this. Please, visit the Google charts website and see how include their script in your page.');
 	    }, 1000)
 	  };
 
@@ -1422,13 +1426,9 @@
 	   */
 	  var _init = function () {
 
-	    if (typeof (google) === 'undefined' || typeof (google.charts) === 'undefined') {
-	      // If google charts library is not available, the chart handler will try
-	      // to load script file.
-	      _forceLoadPackages();
-	    } else {
-	      _loadPackages();
-	    }
+	    if (typeof (google) === 'undefined' || typeof (google.charts) === 'undefined') return;
+
+	    _loadPackages();
 	  };
 
 	  // Now return the functions that should be made public.
@@ -1441,6 +1441,7 @@
 	    getRegistereds: _getRegistereds,
 	    getRendereds: _getRendereds,
 	    init: _init,
+	    forceLoadPackages: _forceLoadPackages,
 	  };
 	})();
 
@@ -1475,7 +1476,6 @@
 
 	window.addEventListener('load', function () {
 	  chartHandler.init();
-	  chartHandler.renderAll();
 	});
 
 /***/ },
