@@ -45,11 +45,12 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	// Libraries.
+	__webpack_require__(1);
 	__webpack_require__(2);
 	__webpack_require__(3);
 	__webpack_require__(4);
-	__webpack_require__(5);
 	// Components.
+	__webpack_require__(5);
 	__webpack_require__(6);
 	__webpack_require__(7);
 	__webpack_require__(8);
@@ -63,12 +64,10 @@
 	__webpack_require__(16);
 	__webpack_require__(17);
 	__webpack_require__(18);
-	__webpack_require__(19);
 
 
 /***/ },
-/* 1 */,
-/* 2 */
+/* 1 */
 /***/ function(module, exports) {
 
 	/**
@@ -546,7 +545,7 @@
 	});
 
 /***/ },
-/* 3 */
+/* 2 */
 /***/ function(module, exports) {
 
 	/**
@@ -899,7 +898,7 @@
 
 
 /***/ },
-/* 4 */
+/* 3 */
 /***/ function(module, exports) {
 
 	/**
@@ -1423,10 +1422,13 @@
 	   */
 	  var _init = function () {
 
-	    // Returns if google charts library is not available.
-	    if (typeof (google) === 'undefined' || typeof (google.charts) === 'undefined') return;
-
-	    _loadPackages();
+	    if (typeof (google) === 'undefined' || typeof (google.charts) === 'undefined') {
+	      // If google charts library is not available, the chart handler will try
+	      // to load script file.
+	      _forceLoadPackages();
+	    } else {
+	      _loadPackages();
+	    }
 	  };
 
 	  // Now return the functions that should be made public.
@@ -1473,10 +1475,11 @@
 
 	window.addEventListener('load', function () {
 	  chartHandler.init();
+	  chartHandler.renderAll();
 	});
 
 /***/ },
-/* 5 */
+/* 4 */
 /***/ function(module, exports) {
 
 	(function () {
@@ -1706,7 +1709,7 @@
 
 
 /***/ },
-/* 6 */
+/* 5 */
 /***/ function(module, exports) {
 
 	/**
@@ -1934,7 +1937,7 @@
 	})();
 
 /***/ },
-/* 7 */
+/* 6 */
 /***/ function(module, exports) {
 
 	/**
@@ -2036,7 +2039,7 @@
 	})();
 
 /***/ },
-/* 8 */
+/* 7 */
 /***/ function(module, exports) {
 
 	/**
@@ -2370,7 +2373,7 @@
 	})();
 
 /***/ },
-/* 9 */
+/* 8 */
 /***/ function(module, exports) {
 
 	/**
@@ -2471,7 +2474,7 @@
 	})();
 
 /***/ },
-/* 10 */
+/* 9 */
 /***/ function(module, exports) {
 
 	/**
@@ -2667,7 +2670,7 @@
 	})();
 
 /***/ },
-/* 11 */
+/* 10 */
 /***/ function(module, exports) {
 
 	/**
@@ -2771,7 +2774,7 @@
 	})();
 
 /***/ },
-/* 12 */
+/* 11 */
 /***/ function(module, exports) {
 
 	/**
@@ -2916,7 +2919,7 @@
 	})();
 
 /***/ },
-/* 13 */
+/* 12 */
 /***/ function(module, exports) {
 
 	/**
@@ -3080,7 +3083,7 @@
 	})();
 
 /***/ },
-/* 14 */
+/* 13 */
 /***/ function(module, exports) {
 
 	/**
@@ -3337,7 +3340,7 @@
 	})();
 
 /***/ },
-/* 15 */
+/* 14 */
 /***/ function(module, exports) {
 
 	/**
@@ -3416,7 +3419,7 @@
 	})();
 
 /***/ },
-/* 16 */
+/* 15 */
 /***/ function(module, exports) {
 
 	/**
@@ -3503,7 +3506,7 @@
 	})();
 
 /***/ },
-/* 17 */
+/* 16 */
 /***/ function(module, exports) {
 
 	/**
@@ -4503,7 +4506,7 @@
 	})();
 
 /***/ },
-/* 18 */
+/* 17 */
 /***/ function(module, exports) {
 
 	/**
@@ -4669,7 +4672,7 @@
 	})();
 
 /***/ },
-/* 19 */
+/* 18 */
 /***/ function(module, exports) {
 
 	/**
