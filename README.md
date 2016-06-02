@@ -8,3 +8,4 @@
 * [timer](src/timer/README.md)
 * [selectfield](src/selectfield/README.md)
 * [slider](src/slider/README.md)
+* [shelf](src/shelf/README.md)
