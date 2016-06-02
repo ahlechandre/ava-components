@@ -388,6 +388,10 @@
   .ava-button--accent i {
     color: inherit; }
 
+/* MATERIALIZE WORKAROUND */
+.btn-floating:hover {
+  background-color: transparent; }
+
 /* DISPLAY FLEX */
 /* TRANSLATE 2D */
 /* PALETTE */

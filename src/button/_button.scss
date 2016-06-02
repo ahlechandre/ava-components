@@ -31,3 +31,11 @@
   }  
 }
 
+/* MATERIALIZE WORKAROUND */
+
+.btn-floating {
+  
+  &:hover {
+    background-color: transparent;
+  }
+}
