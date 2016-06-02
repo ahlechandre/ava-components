@@ -8,6 +8,12 @@ Codifique um elemento com a classe `ava-expandable`:
 ```html
 <div class="ava-expandable"></div>
 ```
+Use o modificador `ava-expandable--table` caso o conteúdo a ser oculto seja linhas de tabela:  
+```html
+<div class="ava-expandable ava-expandable--table">
+  <!-- conteúdo em tabela. -->
+</div>
+```
 Coloque o conteúdo a ser oculto e, posteriormente, expandível dentro da classe `ava-expandable__content`:
 ```html
 <div class="ava-expandable">
