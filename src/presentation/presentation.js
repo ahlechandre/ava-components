@@ -73,7 +73,8 @@
    * 
    */
   AvaPresentation.prototype._setControls = function () {
-
+    var i;
+    
     if (this._nexts) {
 
       for (i = 0; i < this._nexts.length; i++) {
