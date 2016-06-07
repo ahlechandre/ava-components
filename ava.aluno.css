@@ -393,7 +393,7 @@
     color: inherit; }
 
 /* MATERIALIZE WORKAROUND */
-.btn-floating:hover {
+.ava-button--flat.btn-floating:hover {
   background-color: transparent; }
 
 /* DISPLAY FLEX */

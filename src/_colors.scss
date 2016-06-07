@@ -51,7 +51,7 @@ $color-text-icons: null !default;
 
 /* PALETTE ALUNO */
 
-// @include Palette('aluno');
+@include Palette('aluno');
 
 /* PALETTE DIRETOR */
 
@@ -63,4 +63,4 @@ $color-text-icons: null !default;
 
 /* PALETTE DIRETOR */
 
-@include Palette('seduc');
+// @include Palette('seduc');

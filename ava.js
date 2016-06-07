@@ -1993,11 +1993,11 @@
 	   */
 	  AvaDialog.prototype.create = function () {
 	    var triggerElementHref = '#' + this.element.getAttribute('id');
-	    var triggerElement = document.querySelector('[href="' + triggerElementHref + '"]');
+	    var triggerElements = document.querySelectorAll('[href="' + triggerElementHref + '"]');
 	    var onReady;
 	    var onComplete;
 
-	    if (!triggerElement) return;
+	    if (!triggerElements) return;
 	    
 	    onReady = function () {
 	      this.element.dispatchEvent(this._customEvents.onready);
@@ -2007,7 +2007,7 @@
 	    };
 	    
 	    // jQuery initialization.
-	    $(triggerElement).leanModal({
+	    $(triggerElements).leanModal({
 	      ready: onReady.bind(this),
 	      complete: onComplete.bind(this),
 	    });
