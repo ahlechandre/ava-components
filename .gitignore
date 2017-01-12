@@ -1,4 +1,5 @@
 node_modules
+.sass-cache
 src/.sass-cache
 ava.css.map
 *.map
