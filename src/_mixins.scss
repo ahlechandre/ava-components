@@ -47,7 +47,14 @@
     $color-accent: $diretor-accent !global;
     $color-accent-dark: $diretor-accent-dark !global;
     $color-text-icons: $diretor-color-text-icons !global;
-  }  
+  } @else if ($custom == 'seas') {
+    $color-primary: $seas-primary !global;
+    $color-primary-light: $seas-primary-light !global;
+    $color-primary-dark: $seas-primary-dark !global;
+    $color-accent: $seas-accent !global;
+    $color-accent-dark: $seas-accent-dark !global;
+    $color-text-icons: $seas-color-text-icons !global;
+  }
 }
 
 

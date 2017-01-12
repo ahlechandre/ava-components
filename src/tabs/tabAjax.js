@@ -157,11 +157,10 @@
     /**
      * Handle the tab on click. 
      * 
-     * @param {objec} event
      * @param {_tabConfig} tab
      * @return 
      */
-    var _tabOnClick = function (event, tab) {
+    var _tabOnClick = function (tab) {
       var ajaxOptions = {};
 
       // Check if the tab already has your content loaded.
@@ -187,12 +186,12 @@
 
         if (!trigger) continue;
 
-        trigger.addEventListener('click', (function (event, tabItem) {
+        trigger.addEventListener('click', (function (tabItem) {
 
           return function () {
-            _tabOnClick(event, tabItem);
+            _tabOnClick(tabItem);
           };
-        })(event, _tabs[tab]));
+        })(_tabs[tab]));
 
         // Simulates the click on tab that is active.
         if (_tabs[tab].options && _tabs[tab].options.isActive) trigger.click();

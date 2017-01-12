@@ -232,6 +232,24 @@
 	  };
 
 	  /**
+	   * Converts object elements to array.
+	   * 
+	   * @param {object} list
+	   * @return {array}
+	   */
+	  var _getArray = function (list) {
+	    var i;
+	    var length = list.length;
+	    var arr = [];
+
+	    for (i = 0; i < list.length; i++) {
+	      arr[i] = list[i];
+	    }
+
+	    return arr;
+	  };
+
+	  /**
 	   * Returns the component list of a given element.
 	   * 
 	   * @param {HTMLElement} element 
@@ -239,7 +257,7 @@
 	   */
 	  var _getComponentList = function (element) {
 	    var componentList = [];
-	    var cssClasses = element.classList;
+	    var cssClasses = _getArray(element.classList);
 	    var component;
 	    var i;
 
@@ -374,7 +392,7 @@
 
 	    if (!isHTMLElement) return;
 
-	    cssClasses = element.classList;
+	    cssClasses = _getArray(element.classList);
 
 	    if (typeof optionalCssClass === 'string' && optionalCssClass.length) {
 	      registeredComponent = _getRegisteredByClass(optionalCssClass);
@@ -1641,11 +1659,10 @@
 	    /**
 	     * Handle the tab on click. 
 	     * 
-	     * @param {objec} event
 	     * @param {_tabConfig} tab
 	     * @return 
 	     */
-	    var _tabOnClick = function (event, tab) {
+	    var _tabOnClick = function (tab) {
 	      var ajaxOptions = {};
 
 	      // Check if the tab already has your content loaded.
@@ -1671,12 +1688,12 @@
 
 	        if (!trigger) continue;
 
-	        trigger.addEventListener('click', (function (event, tabItem) {
+	        trigger.addEventListener('click', (function (tabItem) {
 
 	          return function () {
-	            _tabOnClick(event, tabItem);
+	            _tabOnClick(tabItem);
 	          };
-	        })(event, _tabs[tab]));
+	        })(_tabs[tab]));
 
 	        // Simulates the click on tab that is active.
 	        if (_tabs[tab].options && _tabs[tab].options.isActive) trigger.click();
