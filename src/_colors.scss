@@ -2,7 +2,7 @@
 
 /* DEFINITIONS */
 
-/* ALUNO */
+/* ALUNO THEME */
 $aluno-primary: #3F51B5;
 $aluno-primary-dark: #303F9F;
 $aluno-primary-light: #C5CAE9;
@@ -10,7 +10,7 @@ $aluno-accent: #E91E63;
 $aluno-accent-dark: #C2185B;
 $aluno-color-text-icons: rgba(255,255,255, 1);
 
-/* SEDUC */
+/* SEDUC THEME */
 $seduc-primary: #03A9F4;
 $seduc-primary-dark: #0288D1;
 $seduc-primary-light: #B3E5FC;
@@ -18,7 +18,7 @@ $seduc-accent: #FFEB3B;
 $seduc-accent-dark: #FBC02D;
 $seduc-color-text-icons: rgba(0, 0, 0, .84);
 
-/* PROFESSOR */
+/* PROFESSOR THEME */
 $professor-primary: #673AB7;
 $professor-primary-dark: #512DA8;
 $professor-primary-light: #D1C4E9;
@@ -26,7 +26,7 @@ $professor-accent: #FF5722;
 $professor-accent-dark: #E64A19;
 $professor-color-text-icons: rgba(255,255,255, 1);
 
-/* DIRETOR */
+/* DIRETOR THEME */
 $diretor-primary: #009688;
 $diretor-primary-dark: #00796B;
 $diretor-primary-light: #B2DFDB;
@@ -34,13 +34,21 @@ $diretor-accent: #E040FB;
 $diretor-accent-dark: #7B1FA2;
 $diretor-color-text-icons: rgba(255,255,255, 1);
 
-/* SEAS */
+/* SEAS THEME */
 $seas-primary: #E91E63;
 $seas-primary-dark: #C2185B;
 $seas-primary-light: #b2ebf2;
 $seas-accent: #2196F3;
 $seas-accent-dark: #1976D2;
 $seas-color-text-icons: rgba(255,255,255, 1);
+
+/* PAIS THEME */
+$pais-primary: #9C27B0;
+$pais-primary-dark: #7B1FA2;
+$pais-primary-light: #E1BEE7;
+$pais-accent: #2196F3;
+$pais-accent-dark: #1976D2;
+$pais-color-text-icons: rgba(255,255,255, 1);
 
 /* PALETTE COLORS */
 
@@ -75,4 +83,8 @@ $color-text-icons: null !default;
 
 /* PALETTE SEAS */
 
-@include Palette('seas');
+// @include Palette('seas');
+
+/* PALETTE PAIS */
+
+@include Palette('pais');

@@ -54,6 +54,13 @@
     $color-accent: $seas-accent !global;
     $color-accent-dark: $seas-accent-dark !global;
     $color-text-icons: $seas-color-text-icons !global;
+  } @else if ($custom == 'pais') {
+    $color-primary: $pais-primary !global;
+    $color-primary-light: $pais-primary-light !global;
+    $color-primary-dark: $pais-primary-dark !global;
+    $color-accent: $pais-accent !global;
+    $color-accent-dark: $pais-accent-dark !global;
+    $color-text-icons: $pais-color-text-icons !global;
   }
 }
 

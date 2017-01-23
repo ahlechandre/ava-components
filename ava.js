@@ -4332,12 +4332,12 @@
 
 	    for (i = 0; i < this._tests.length; i++) {
 
-	      this._tests[i].elements.actionComplete.addEventListener('click', (function (event, element) {
+	      this._tests[i].elements.actionComplete.addEventListener('click', (function (element) {
 
-	        return function () {
+	        return function (event) {
 	          onComplete(event, element);
 	        };
-	      })(event, this._tests[i].element));
+	      })(this._tests[i].element));
 	    }
 	  };
 
@@ -4354,12 +4354,12 @@
 
 	    for (i = 0; i < this._tests.length; i++) {
 
-	      this._tests[i].elements.actionSkip.addEventListener('click', (function (event, element) {
+	      this._tests[i].elements.actionSkip.addEventListener('click', (function (element) {
 
-	        return function () {
+	        return function (event) {
 	          onSkip(event, element);
 	        };
-	      })(event, this._tests[i].element));
+	      })(this._tests[i].element));
 	    }
 	  };
 
@@ -4376,12 +4376,12 @@
 
 	    for (i = 0; i < this._tests.length; i++) {
 
-	      this._tests[i].elements.actionBack.addEventListener('click', (function (event, element) {
+	      this._tests[i].elements.actionBack.addEventListener('click', (function (element) {
 
-	        return function () {
+	        return function (event) {
 	          onBack(event, element);
 	        };
-	      })(event, this._tests[i].element));
+	      })(this._tests[i].element));
 	    }
 	  };
 
@@ -4398,12 +4398,12 @@
 
 	    for (i = 0; i < this._tests.length; i++) {
 
-	      this._tests[i].elements.labelSupport.addEventListener('click', (function (event, element) {
+	      this._tests[i].elements.labelSupport.addEventListener('click', (function (element) {
 
-	        return function () {
+	        return function (event) {
 	          onSupport(event, element);
 	        };
-	      })(event, this._tests[i].element));
+	      })(this._tests[i].element));
 	    }
 	  };
 
