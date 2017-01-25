@@ -61,6 +61,13 @@
     $color-accent: $pais-accent !global;
     $color-accent-dark: $pais-accent-dark !global;
     $color-text-icons: $pais-color-text-icons !global;
+  } @else if ($custom == 'pedagogo') {
+    $color-primary: $pedagogo-primary !global;
+    $color-primary-light: $pedagogo-primary-light !global;
+    $color-primary-dark: $pedagogo-primary-dark !global;
+    $color-accent: $pedagogo-accent !global;
+    $color-accent-dark: $pedagogo-accent-dark !global;
+    $color-text-icons: $pedagogo-color-text-icons !global;
   }
 }
 

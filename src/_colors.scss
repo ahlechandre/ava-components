@@ -50,6 +50,14 @@ $pais-accent: #2196F3;
 $pais-accent-dark: #1976D2;
 $pais-color-text-icons: rgba(255,255,255, 1);
 
+/*  PEDAGOGO THEME */
+$pedagogo-primary: #607D8B;
+$pedagogo-primary-dark: #455A64;
+$pedagogo-primary-light: #CFD8DC;
+$pedagogo-accent: #F44336;
+$pedagogo-accent-dark: #D32F2F;
+$pedagogo-color-text-icons: rgba(255,255,255, 1);
+
 /* PALETTE COLORS */
 
 $color-blue: #2196F3;
@@ -87,4 +95,8 @@ $color-text-icons: null !default;
 
 /* PALETTE PAIS */
 
-@include Palette('pais');
+// @include Palette('pais');
+
+/* PALETTE PEDAGOGO */
+
+@include Palette('pedagogo');

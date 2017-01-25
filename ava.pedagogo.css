@@ -10,6 +10,7 @@
 /* DIRETOR THEME */
 /* SEAS THEME */
 /* PAIS THEME */
+/*  PEDAGOGO THEME */
 /* PALETTE COLORS */
 /* PALETTE */
 /* PALETTE ALUNO */
@@ -18,6 +19,7 @@
 /* PALETTE DIRETOR */
 /* PALETTE SEAS */
 /* PALETTE PAIS */
+/* PALETTE PEDAGOGO */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
@@ -83,6 +85,7 @@
 /* DIRETOR THEME */
 /* SEAS THEME */
 /* PAIS THEME */
+/*  PEDAGOGO THEME */
 /* PALETTE COLORS */
 /* PALETTE */
 /* PALETTE ALUNO */
@@ -91,6 +94,7 @@
 /* PALETTE DIRETOR */
 /* PALETTE SEAS */
 /* PALETTE PAIS */
+/* PALETTE PEDAGOGO */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
@@ -135,6 +139,7 @@
 /* DIRETOR THEME */
 /* SEAS THEME */
 /* PAIS THEME */
+/*  PEDAGOGO THEME */
 /* PALETTE COLORS */
 /* PALETTE */
 /* PALETTE ALUNO */
@@ -143,13 +148,14 @@
 /* PALETTE DIRETOR */
 /* PALETTE SEAS */
 /* PALETTE PAIS */
+/* PALETTE PEDAGOGO */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
 /* PANEL */
 .ava-section__panel {
   position: relative;
-  background-color: #512DA8;
+  background-color: #455A64;
   width: 100%;
   min-height: 180px;
   padding: 24px;
@@ -189,6 +195,7 @@
 /* DIRETOR THEME */
 /* SEAS THEME */
 /* PAIS THEME */
+/*  PEDAGOGO THEME */
 /* PALETTE COLORS */
 /* PALETTE */
 /* PALETTE ALUNO */
@@ -197,6 +204,7 @@
 /* PALETTE DIRETOR */
 /* PALETTE SEAS */
 /* PALETTE PAIS */
+/* PALETTE PEDAGOGO */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
@@ -227,6 +235,7 @@
 /* DIRETOR THEME */
 /* SEAS THEME */
 /* PAIS THEME */
+/*  PEDAGOGO THEME */
 /* PALETTE COLORS */
 /* PALETTE */
 /* PALETTE ALUNO */
@@ -235,6 +244,7 @@
 /* PALETTE DIRETOR */
 /* PALETTE SEAS */
 /* PALETTE PAIS */
+/* PALETTE PEDAGOGO */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
@@ -270,6 +280,7 @@
 /* DIRETOR THEME */
 /* SEAS THEME */
 /* PAIS THEME */
+/*  PEDAGOGO THEME */
 /* PALETTE COLORS */
 /* PALETTE */
 /* PALETTE ALUNO */
@@ -278,6 +289,7 @@
 /* PALETTE DIRETOR */
 /* PALETTE SEAS */
 /* PALETTE PAIS */
+/* PALETTE PEDAGOGO */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
@@ -375,6 +387,7 @@
 /* DIRETOR THEME */
 /* SEAS THEME */
 /* PAIS THEME */
+/*  PEDAGOGO THEME */
 /* PALETTE COLORS */
 /* PALETTE */
 /* PALETTE ALUNO */
@@ -383,6 +396,7 @@
 /* PALETTE DIRETOR */
 /* PALETTE SEAS */
 /* PALETTE PAIS */
+/* PALETTE PEDAGOGO */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
@@ -398,6 +412,7 @@
 /* DIRETOR THEME */
 /* SEAS THEME */
 /* PAIS THEME */
+/*  PEDAGOGO THEME */
 /* PALETTE COLORS */
 /* PALETTE */
 /* PALETTE ALUNO */
@@ -406,11 +421,12 @@
 /* PALETTE DIRETOR */
 /* PALETTE SEAS */
 /* PALETTE PAIS */
+/* PALETTE PEDAGOGO */
 /* PRIMARY */
 .ava-button {
-  background-color: #673AB7; }
+  background-color: #607D8B; }
   .ava-button:focus, .ava-button:hover, .ava-button:active {
-    background-color: #673AB7; }
+    background-color: #607D8B; }
 
 /* FLAT */
 .ava-button--flat {
@@ -440,6 +456,7 @@
 /* DIRETOR THEME */
 /* SEAS THEME */
 /* PAIS THEME */
+/*  PEDAGOGO THEME */
 /* PALETTE COLORS */
 /* PALETTE */
 /* PALETTE ALUNO */
@@ -448,6 +465,7 @@
 /* PALETTE DIRETOR */
 /* PALETTE SEAS */
 /* PALETTE PAIS */
+/* PALETTE PEDAGOGO */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
@@ -458,7 +476,7 @@
 .ava-navbar--tabs {
   box-shadow: none !important; }
   .ava-navbar--tabs .nav-wrapper {
-    background-color: #673AB7;
+    background-color: #607D8B;
     z-index: 2; }
 
 /* NAVBAR WITH TABS */
@@ -469,7 +487,7 @@
     z-index: 1;
     top: -8px;
     border-bottom-width: 0;
-    background-color: #673AB7;
+    background-color: #607D8B;
     box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12); }
     .ava-navbar--tabs .ava-tabs .ava-tabs__link {
       color: rgba(255, 255, 255, 0.54) !important; }
@@ -488,6 +506,7 @@
 /* DIRETOR THEME */
 /* SEAS THEME */
 /* PAIS THEME */
+/*  PEDAGOGO THEME */
 /* PALETTE COLORS */
 /* PALETTE */
 /* PALETTE ALUNO */
@@ -496,6 +515,7 @@
 /* PALETTE DIRETOR */
 /* PALETTE SEAS */
 /* PALETTE PAIS */
+/* PALETTE PEDAGOGO */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
@@ -504,7 +524,7 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   height: auto; }
   .ava-tabs .indicator {
-    background-color: #FF5722;
+    background-color: #F44336;
     height: 3px; }
   .ava-tabs .ava-tabs__item {
     height: auto; }
@@ -542,7 +562,7 @@
   display: -ms-flex !important;
   display: flex !important; }
   .ava-tabs__link.active {
-    color: #FF5722 !important; }
+    color: #F44336 !important; }
 
 /* DISPLAY FLEX */
 /* TRANSLATE 2D */
@@ -556,6 +576,7 @@
 /* DIRETOR THEME */
 /* SEAS THEME */
 /* PAIS THEME */
+/*  PEDAGOGO THEME */
 /* PALETTE COLORS */
 /* PALETTE */
 /* PALETTE ALUNO */
@@ -564,6 +585,7 @@
 /* PALETTE DIRETOR */
 /* PALETTE SEAS */
 /* PALETTE PAIS */
+/* PALETTE PEDAGOGO */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
@@ -579,6 +601,7 @@
 /* DIRETOR THEME */
 /* SEAS THEME */
 /* PAIS THEME */
+/*  PEDAGOGO THEME */
 /* PALETTE COLORS */
 /* PALETTE */
 /* PALETTE ALUNO */
@@ -587,6 +610,7 @@
 /* PALETTE DIRETOR */
 /* PALETTE SEAS */
 /* PALETTE PAIS */
+/* PALETTE PEDAGOGO */
 /* TESTER */
 .ava-tester {
   position: relative;
@@ -795,6 +819,7 @@
 /* DIRETOR THEME */
 /* SEAS THEME */
 /* PAIS THEME */
+/*  PEDAGOGO THEME */
 /* PALETTE COLORS */
 /* PALETTE */
 /* PALETTE ALUNO */
@@ -803,20 +828,21 @@
 /* PALETTE DIRETOR */
 /* PALETTE SEAS */
 /* PALETTE PAIS */
+/* PALETTE PEDAGOGO */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
 /* TEXTFIELD */
 .ava-textfield .prefix.active {
-  color: #673AB7 !important; }
+  color: #607D8B !important; }
 
 /* INPUT */
 .ava-textfield__input:focus {
-  border-bottom: 1px solid #673AB7 !important;
-  box-shadow: 0 1px 0 0 #673AB7 !important;
+  border-bottom: 1px solid #607D8B !important;
+  box-shadow: 0 1px 0 0 #607D8B !important;
   /* LABEL ON FOCUS */ }
   .ava-textfield__input:focus + .ava-textfield__label {
-    color: #673AB7 !important; }
+    color: #607D8B !important; }
 
 /* LABEL */
 /* DISPLAY FLEX */
@@ -831,6 +857,7 @@
 /* DIRETOR THEME */
 /* SEAS THEME */
 /* PAIS THEME */
+/*  PEDAGOGO THEME */
 /* PALETTE COLORS */
 /* PALETTE */
 /* PALETTE ALUNO */
@@ -839,20 +866,21 @@
 /* PALETTE DIRETOR */
 /* PALETTE SEAS */
 /* PALETTE PAIS */
+/* PALETTE PEDAGOGO */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
 /* DATEFIELD */
 .ava-datefield .prefix.active {
-  color: #673AB7 !important; }
+  color: #607D8B !important; }
 
 /* INPUT */
 .ava-datefield__input:focus {
-  border-bottom: 1px solid #673AB7 !important;
-  box-shadow: 0 1px 0 0 #673AB7 !important;
+  border-bottom: 1px solid #607D8B !important;
+  box-shadow: 0 1px 0 0 #607D8B !important;
   /* LABEL ON FOCUS */ }
   .ava-datefield__input:focus + .ava-datefield__label {
-    color: #673AB7 !important; }
+    color: #607D8B !important; }
 
 /* LABEL */
 /* DISPLAY FLEX */
@@ -867,6 +895,7 @@
 /* DIRETOR THEME */
 /* SEAS THEME */
 /* PAIS THEME */
+/*  PEDAGOGO THEME */
 /* PALETTE COLORS */
 /* PALETTE */
 /* PALETTE ALUNO */
@@ -875,8 +904,9 @@
 /* PALETTE DIRETOR */
 /* PALETTE SEAS */
 /* PALETTE PAIS */
+/* PALETTE PEDAGOGO */
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
 
-/*# sourceMappingURL=ava.professor.css.map */
+/*# sourceMappingURL=ava.pedagogo.css.map */
