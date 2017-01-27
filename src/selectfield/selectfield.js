@@ -121,6 +121,76 @@
   };
 
   /**
+   * Creates a virtual DOM for option elements.
+   *
+   * @return {Array}
+   */
+  AvaSelectfield.prototype._getNodeList = function (options) {
+    var i;
+    var nodeList = [];
+    var attribute;
+
+    for (i = 0; i < options.length; i++) {
+      nodeList[i] = document.createElement('option');
+        
+      for (attribute in options[i].attributes) {
+        nodeList[i].setAttribute(attribute, options[i].attributes[attribute]);
+        nodeList[i].textContent = options[i].label;
+      }
+    }
+    return nodeList;
+  };
+
+  /**
+   * Removes options of the values passed as argument.
+   *
+   */
+  AvaSelectfield.prototype.remove = function (values) {
+    var i;
+    var optionElement;
+
+    for (i = 0; i < values.length; i++) {
+      optionElement = this._select.querySelector('option[value="' + values[i] + '"]');
+
+      if (optionElement) {
+        this._select.removeChild(optionElement);
+      }
+      optionElement = null;
+    }
+  };
+  
+  /**
+   * Defines the new options to the selectfield.
+   *
+   */
+  AvaSelectfield.prototype.set = function (options) {
+    var nodeList = this._getNodeList(options);
+    var optionElement;
+    
+    // Removing all children nodes of select before adding new options.
+    while (this._select.firstChild) {
+      this._select.removeChild(this._select.firstChild);
+    }
+
+    for (optionElement in nodeList) {
+      this._select.appendChild(nodeList[optionElement]);
+    }
+  };
+
+  /**
+   * Applies new options of selectfield to the end.
+   *
+   */
+  AvaSelectfield.prototype.append = function (options) {
+    var nodeList = this._getNodeList(options);
+    var optionElement;
+    
+    for (optionElement in nodeList) {
+      this._select.appendChild(nodeList[optionElement]);
+    }
+  };
+
+  /**
    * Destroys and initializes the select.
    * 
    */

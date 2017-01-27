@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "./node_modules/.bin/webpack",
     "prod": "NODE_ENV=production ./node_modules/.bin/webpack",
-    "prod_windows": "set \"NODE_ENV=production\" && \"./node_modules/.bin/webpack\""
+    "prod_windows": "set \"NODE_ENV=production\" && \"./node_modules/.bin/webpack\"",
+    "prod_windows_watch": "set \"NODE_ENV=production\" && \"./node_modules/.bin/webpack\" --watch"
   },
   "repository": {
     "type": "git",
