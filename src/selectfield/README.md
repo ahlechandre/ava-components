@@ -77,9 +77,9 @@ selectfield.select('2');
 selectfield.getValue(); // 2
 ```
 
-# Adicionando novas opções dinamicamente
+# Opções dinâmicas
 
-Para adicionar novas opções, basta usar o método `append(options)` ou `set(options)`.
+Para adicionar novas opções, basta usar o método `append(options)` ou `set(options)`. Se você precisar remover alguma opção, pode usar `remove(values)`
 
 O parâmetro `options` deve ser um `array` contendo o texto e os atributos de cada opção a ser adicionada, desta forma:
 
@@ -195,7 +195,7 @@ MySelectfield.set([
   },
 ]);
 
-// Atualiza o componente e renderiza a nova opção.
+// Atualiza o componente e renderiza as novas opções.
 MySelectfield.update();
 ```
 
@@ -206,6 +206,35 @@ Após a operação de `set`, o `selectfield` deve estar assim:
   <select class="ava-selectfield__select">
     <option value="new-option">New option</option>
     <option value="new-option-2">New option 2</option>
+  </select>
+  <label class="ava-selectfield__label">My Select</label>
+</div>
+```
+
+## remove
+
+Removendo opções:
+
+```js
+// Seleciona o elemento selectfield.
+var selectfieldElement = document.querySelector('.ava-selectfield#my-selectfield');
+
+// Acessa o componente.
+var MySelectfield = selectfieldElement.AvaSelectfield;
+
+// Remove virtualmente todas as opções que possuem valores referentes aos passados como argumento.
+MySelectfield.remove([0, 1])
+
+// Atualiza o componente e renderiza sem essas opções.
+MySelectfield.update();
+```
+
+Após a operação de `remove`, o `selectfield` deve estar assim:
+
+```html
+<div class="ava-selectfield">
+  <select class="ava-selectfield__select">
+    <option value="2">2</option>
   </select>
   <label class="ava-selectfield__label">My Select</label>
 </div>
