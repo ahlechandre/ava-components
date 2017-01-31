@@ -18,3 +18,4 @@ require('./tabs/tabs');
 require('./tester/tester');
 require('./textfield/textfield');
 require('./timer/timer');
+require('./collapsible/collapsible');
