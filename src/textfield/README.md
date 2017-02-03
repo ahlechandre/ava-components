@@ -17,7 +17,7 @@ Em seguida, adicione o *input*  com a classe `ava-textfield__input`:
 </div>
 ```
 
-Caso o `input` seja multilinha, adicione o elemento de textfield com a classe `ava-textfield__input` e o modificador `ava-textfield__input--multiline`, além disso, acrescente a classe `materialize-textarea`:
+Caso o `input` seja multilinha, adicione o elemento de `textfield` com a classe `ava-textfield__input` e o modificador `ava-textfield__input--multiline`, além disso, acrescente a classe `materialize-textarea`:
 
 ```html
 <div class="ava-textfield">
@@ -64,7 +64,7 @@ var textfield = textfieldElement.AvaTextfield;
 
 Método | Efeito | Parâmetros | Retorno
 -------|--------|------------|--------
-`autoresize()` | Redimensiona automaticamente o campo caso seja multilinha. | | `undefined`
+`autoresize()` | Redimensiona o campo caso seja multilinha. | | `undefined`
 `create()` | Inicializa dinamicamente o campo. | | `undefined`
 `clear()` | Define o valor do campo como vazio. | | `undefined`
 `destroy()` | Destrói dinamicamente o campo. | | `undefined`
@@ -119,6 +119,6 @@ Para que a altura seja redimensionada automaticamente, utilize o método `setVal
 var textfieldElement = document.querySelector('.ava-textfield#my-textfield-multiline');
 var MyTextfield = textfieldElement.AvaTextfield;
 
-// Define o valor do campo.
+// Define dinamicamente o valor do campo com a sua altura redimensionada.
 MyTextfield.setValue('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel eros vitae nisl dignissim rhoncus. Morbi pellentesque lorem eu ex semper rutrum. Curabitur nec lacus a massa tristique posuere ac nec libero. Aliquam et consequat ex. Aliquam iaculis sed nunc et tempus. Morbi vehicula sapien sed ipsum posuere sodales non id mauris. In semper pulvinar viverra. Phasellus nec magna eleifend, luctus purus et, accumsan magna. Praesent sit amet nibh pellentesque, eleifend nisl id, venenatis lacus. Cras sed tempus elit.');
 ```
