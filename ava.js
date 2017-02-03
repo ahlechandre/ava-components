@@ -4623,6 +4623,7 @@
 	   */
 	  AvaTextfield.prototype._cssClasses = {
 	    INPUT: 'ava-textfield__input',
+	    INPUT_MULTILINE: 'ava-textfield__input--multiline',
 	    LABEL: 'ava-textfield__label',
 	    LABEL_ACTIVE_MATERIALIZE: 'active',
 	  };
@@ -4712,6 +4713,15 @@
 	    this.destroy();    
 	    this.create();    
 	  };
+
+	  /**
+	   * Update the textfield.
+	   * 
+	   */
+	  AvaTextfield.prototype.update = function () {
+	    this.destroy();    
+	    this.create();    
+	  };
 	  
 	  /**
 	   * Clear the textfield.
@@ -4722,11 +4732,32 @@
 	  };
 	  
 	  /**
-	   * Clear the textfield.
+	   * Check if input is multiline. 
+	   *
+	   * @return {boolean}
+	   */
+	  AvaTextfield.prototype._isMultiline = function () {
+	    return this._input.classList.contains(this._cssClasses.INPUT_MULTILINE);
+	  };
+
+	  /**
+	   * Resize the multiline input. 
+	   *
+	   */
+	  AvaTextfield.prototype.autoresize = function () {
+	    if (this._isMultiline()) {
+	      this._setActiveLabel();
+	      $(this._input).trigger('autoresize');
+	    }
+	  };
+	  
+	  /**
+	   * Defines the value of textfield input.
 	   * 
 	   */
 	  AvaTextfield.prototype.setValue = function (value) {
 	    this._input.value = value;
+	    this.autoresize();
 	    this.update();
 	  };
 	  
@@ -4754,7 +4785,7 @@
 
 	  // Registers the component. "Componentize" object must be available globally.
 	  Componentize.register({
-	    name: 'AvaTexfield',
+	    name: 'AvaTextfield',
 	    constructor: AvaTextfield,
 	    cssClass: 'ava-textfield',
 	  });
