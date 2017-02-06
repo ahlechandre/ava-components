@@ -39,3 +39,8 @@
     background-color: transparent;
   }
 }
+
+/* SPACE BETWEEN BUTTONS */
+.ava-button + .ava-button {
+  margin-left: 12px;
+}
