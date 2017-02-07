@@ -110,6 +110,10 @@
       bubbles: true,
       cancelable: true,
     }),
+    oneachsecond: new CustomEvent('oneachsecond', {
+      bubbles: true,
+      cancelable: true,
+    }),
   };
 
   /**
@@ -379,7 +383,7 @@
   };
 
   /**
-   * Returns the current time in miliseconds.
+   * Returns the current time in seconds.
    * 
    */
   AvaTimer.prototype.getTimeSecs = function () {
@@ -538,6 +542,7 @@
     this._renderSecs();
     this._renderMins();
     this._renderHours();
+    this.element.dispatchEvent(this._customEvents.oneachsecond);
   };
 
   /**
