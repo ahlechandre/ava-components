@@ -19,3 +19,21 @@
   align-items: center;
   justify-content:  center;
 }
+
+/* ALIGNMENTS */
+.ava-align {
+  display: flex;
+
+  &.ava-align--center {
+    align-items: center;
+    justify-content:  center;
+  }  
+  &.ava-align--start {
+    align-items: flex-start;
+    justify-content:  flex-start;
+  }  
+  &.ava-align--end {
+    align-items: flex-end;
+    justify-content:  flex-end;
+  }  
+}

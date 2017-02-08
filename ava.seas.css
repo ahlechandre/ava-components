@@ -112,6 +112,19 @@
   align-items: center;
   justify-content: center; }
 
+/* ALIGNMENTS */
+.ava-align {
+  display: flex; }
+  .ava-align.ava-align--center {
+    align-items: center;
+    justify-content: center; }
+  .ava-align.ava-align--start {
+    align-items: flex-start;
+    justify-content: flex-start; }
+  .ava-align.ava-align--end {
+    align-items: flex-end;
+    justify-content: flex-end; }
+
 /* fallback */
 @font-face {
   font-family: 'Material Icons';
