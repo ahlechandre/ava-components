@@ -723,6 +723,19 @@
     margin-top: 0;
     font-size: 15px; }
 
+/* TEST LABEL ATTACHMENT */
+.ava-test__label-attachment {
+  margin: 4px 0 8px 0; }
+
+/* TEST LABEL VIDEO */
+.ava-test__label-video {
+  width: 100%;
+  height: 420px;
+  margin-top: 12px; }
+  .ava-test__label-video video {
+    width: 100%;
+    height: 100%; }
+
 /* TEST LABEL SUPPORT */
 .ava-test__label-support {
   position: absolute;
@@ -931,5 +944,32 @@
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
+/* DISPLAY FLEX */
+/* TRANSLATE 2D */
+/* PALETTE */
+/* ANIMATION */
+/* SHADOW */
+/* DEFINITIONS */
+/* ALUNO THEME */
+/* SEDUC THEME */
+/* PROFESSOR THEME */
+/* DIRETOR THEME */
+/* SEAS THEME */
+/* PAIS THEME */
+/*  PEDAGOGO THEME */
+/* PALETTE COLORS */
+/* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE SEDUC */
+/* PALETTE SEAS */
+/* PALETTE PAIS */
+/* PALETTE PEDAGOGO */
+/* SHADOWS */
+/* PROFILE */
+/* TESTER */
+.ava-chip + .ava-chip {
+  margin-left: 4px; }
 
 /*# sourceMappingURL=ava.seas.css.map */

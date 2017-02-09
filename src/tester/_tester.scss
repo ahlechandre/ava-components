@@ -99,6 +99,25 @@
   }
 }
 
+/* TEST LABEL ATTACHMENT */
+
+.ava-test__label-attachment {
+  margin: 4px 0 8px 0;
+}
+
+/* TEST LABEL VIDEO */
+
+.ava-test__label-video {
+  width: 100%;
+  height: 420px;
+  margin-top: 12px;
+
+  video {
+    width: 100%;
+    height: 100%;
+  }
+}
+
 /* TEST LABEL SUPPORT */
 
 .ava-test__label-support {
