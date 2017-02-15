@@ -171,6 +171,166 @@
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
+/* TEXTFIELD */
+.ava-textfield .prefix.active {
+  color: #607D8B !important; }
+
+/* INPUT */
+.ava-textfield__input:focus {
+  border-bottom: 1px solid #607D8B !important;
+  box-shadow: 0 1px 0 0 #607D8B !important;
+  /* LABEL ON FOCUS */ }
+  .ava-textfield__input:focus + .ava-textfield__label {
+    color: #607D8B !important; }
+
+/* LABEL */
+/* DISPLAY FLEX */
+/* TRANSLATE 2D */
+/* PALETTE */
+/* ANIMATION */
+/* SHADOW */
+/* DEFINITIONS */
+/* ALUNO THEME */
+/* SEDUC THEME */
+/* PROFESSOR THEME */
+/* DIRETOR THEME */
+/* SEAS THEME */
+/* PAIS THEME */
+/*  PEDAGOGO THEME */
+/* PALETTE COLORS */
+/* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE SEDUC */
+/* PALETTE SEAS */
+/* PALETTE PAIS */
+/* PALETTE PEDAGOGO */
+/* SHADOWS */
+/* PROFILE */
+/* TESTER */
+/* DATEFIELD */
+.ava-datefield .prefix.active {
+  color: #607D8B !important; }
+
+/* INPUT */
+.ava-datefield__input:focus {
+  border-bottom: 1px solid #607D8B !important;
+  box-shadow: 0 1px 0 0 #607D8B !important;
+  /* LABEL ON FOCUS */ }
+  .ava-datefield__input:focus + .ava-datefield__label {
+    color: #607D8B !important; }
+
+/* LABEL */
+/* DISPLAY FLEX */
+/* TRANSLATE 2D */
+/* PALETTE */
+/* ANIMATION */
+/* SHADOW */
+/* DEFINITIONS */
+/* ALUNO THEME */
+/* SEDUC THEME */
+/* PROFESSOR THEME */
+/* DIRETOR THEME */
+/* SEAS THEME */
+/* PAIS THEME */
+/*  PEDAGOGO THEME */
+/* PALETTE COLORS */
+/* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE SEDUC */
+/* PALETTE SEAS */
+/* PALETTE PAIS */
+/* PALETTE PEDAGOGO */
+/* SHADOWS */
+/* PROFILE */
+/* TESTER */
+/* ITEM */
+.ava-collection__item {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap; }
+
+@media only screen and (max-width: 768px) {
+  .ava-collection {
+    overflow: visible; }
+
+  /* SECONDARY SWITCH */
+  .ava-collection__item-secondary .switch {
+    -webkit-tap-highlight-color: transparent;
+    float: none;
+    margin-right: 0; }
+
+  /* SECONDARY SWITCH LABEL */
+  .ava-collection__item-secondary .switch > label {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: flex;
+    font-size: 0;
+    justify-content: center;
+    align-items: center; } }
+/* DISPLAY FLEX */
+/* TRANSLATE 2D */
+/* PALETTE */
+/* ANIMATION */
+/* SHADOW */
+/* DEFINITIONS */
+/* ALUNO THEME */
+/* SEDUC THEME */
+/* PROFESSOR THEME */
+/* DIRETOR THEME */
+/* SEAS THEME */
+/* PAIS THEME */
+/*  PEDAGOGO THEME */
+/* PALETTE COLORS */
+/* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE SEDUC */
+/* PALETTE SEAS */
+/* PALETTE PAIS */
+/* PALETTE PEDAGOGO */
+/* SHADOWS */
+/* PROFILE */
+/* TESTER */
+/* INPUT CHECKED LEVER */
+input[type="checkbox"]:checked + .ava-switch__lever {
+  background-color: #CFD8DC !important; }
+  input[type="checkbox"]:checked + .ava-switch__lever:after {
+    background-color: #607D8B !important; }
+
+/* DISPLAY FLEX */
+/* TRANSLATE 2D */
+/* PALETTE */
+/* ANIMATION */
+/* SHADOW */
+/* DEFINITIONS */
+/* ALUNO THEME */
+/* SEDUC THEME */
+/* PROFESSOR THEME */
+/* DIRETOR THEME */
+/* SEAS THEME */
+/* PAIS THEME */
+/*  PEDAGOGO THEME */
+/* PALETTE COLORS */
+/* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE SEDUC */
+/* PALETTE SEAS */
+/* PALETTE PAIS */
+/* PALETTE PEDAGOGO */
+/* SHADOWS */
+/* PROFILE */
+/* TESTER */
 /* PANEL */
 .ava-section__panel {
   position: relative;
@@ -201,6 +361,156 @@
   font-size: 1.5rem;
   margin: 6px 0;
   opacity: .7; }
+
+/* DISPLAY FLEX */
+/* TRANSLATE 2D */
+/* PALETTE */
+/* ANIMATION */
+/* SHADOW */
+/* DEFINITIONS */
+/* ALUNO THEME */
+/* SEDUC THEME */
+/* PROFESSOR THEME */
+/* DIRETOR THEME */
+/* SEAS THEME */
+/* PAIS THEME */
+/*  PEDAGOGO THEME */
+/* PALETTE COLORS */
+/* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE SEDUC */
+/* PALETTE SEAS */
+/* PALETTE PAIS */
+/* PALETTE PEDAGOGO */
+/* SHADOWS */
+/* PROFILE */
+/* TESTER */
+/* DISPLAY FLEX */
+/* TRANSLATE 2D */
+/* PALETTE */
+/* ANIMATION */
+/* SHADOW */
+/* DEFINITIONS */
+/* ALUNO THEME */
+/* SEDUC THEME */
+/* PROFESSOR THEME */
+/* DIRETOR THEME */
+/* SEAS THEME */
+/* PAIS THEME */
+/*  PEDAGOGO THEME */
+/* PALETTE COLORS */
+/* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE SEDUC */
+/* PALETTE SEAS */
+/* PALETTE PAIS */
+/* PALETTE PEDAGOGO */
+/* PRIMARY */
+.ava-button {
+  background-color: #607D8B; }
+  .ava-button:focus, .ava-button:hover, .ava-button:active {
+    background-color: #607D8B; }
+
+/* FLAT */
+.ava-button--flat {
+  background-color: transparent !important; }
+  .ava-button--flat:focus, .ava-button--flat:hover, .ava-button--flat:active {
+    background-color: transparent !important; }
+
+/* ACCENT */
+.ava-button--accent {
+  color: white; }
+  .ava-button--accent i {
+    color: inherit; }
+
+/* MATERIALIZE WORKAROUND */
+.ava-button--flat.btn-floating:hover {
+  background-color: transparent; }
+
+/* SPACE BETWEEN BUTTONS */
+.ava-button + .ava-button {
+  margin-left: 12px; }
+
+/* DISPLAY FLEX */
+/* TRANSLATE 2D */
+/* PALETTE */
+/* ANIMATION */
+/* SHADOW */
+/* DEFINITIONS */
+/* ALUNO THEME */
+/* SEDUC THEME */
+/* PROFESSOR THEME */
+/* DIRETOR THEME */
+/* SEAS THEME */
+/* PAIS THEME */
+/*  PEDAGOGO THEME */
+/* PALETTE COLORS */
+/* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE SEDUC */
+/* PALETTE SEAS */
+/* PALETTE PAIS */
+/* PALETTE PEDAGOGO */
+/* SHADOWS */
+/* PROFILE */
+/* TESTER */
+/* NAVBAR */
+.ava-navbar li:hover, .ava-navbar a:hover {
+  background-color: transparent !important; }
+
+/* NAVBAR WITH SEARCH */
+.ava-navbar--search {
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  background-color: white;
+  border-radius: 2px;
+  height: 56px !important; }
+  .ava-navbar--search .ava-textfield {
+    height: 56px; }
+  .ava-navbar--search .ava-textfield__input {
+    border-bottom: 0 !important;
+    box-shadow: none !important; }
+  .ava-navbar--search .ava-textfield__label {
+    margin-top: 0; }
+  .ava-navbar--search .material-icons {
+    line-height: 56px !important;
+    color: rgba(0, 0, 0, 0.86) !important; }
+
+/* NAVBAR WITH TABS */
+.ava-navbar--tabs {
+  box-shadow: none !important;
+  /* TABS */ }
+  .ava-navbar--tabs .nav-wrapper {
+    background-color: #607D8B;
+    z-index: 2; }
+  .ava-navbar--tabs .ava-tabs {
+    position: relative;
+    z-index: 1;
+    top: -8px;
+    border-bottom-width: 0;
+    background-color: #607D8B;
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12); }
+    .ava-navbar--tabs .ava-tabs .ava-tabs__link {
+      color: rgba(255, 255, 255, 0.54) !important; }
+      .ava-navbar--tabs .ava-tabs .ava-tabs__link.active {
+        color: white !important; }
+
+.ava-shadow--2dp {
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12); }
+
+.ava-shadow--4dp {
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }
+
+.ava-shadow--6dp {
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12); }
+
+.ava-shadow--8dp {
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12); }
 
 /* DISPLAY FLEX */
 /* TRANSLATE 2D */
@@ -365,18 +675,6 @@
   color: rgba(0, 0, 0, 0.54);
   margin: 0 0 12px 0; }
 
-.ava-shadow--2dp {
-  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12); }
-
-.ava-shadow--4dp {
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); }
-
-.ava-shadow--6dp {
-  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12); }
-
-.ava-shadow--8dp {
-  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12); }
-
 .ava-image-bg {
   background-size: cover;
   background-position: center;
@@ -393,129 +691,6 @@
 
 .ava-image-bg--avatar {
   border-radius: 13px; }
-
-/* DISPLAY FLEX */
-/* TRANSLATE 2D */
-/* PALETTE */
-/* ANIMATION */
-/* SHADOW */
-/* DEFINITIONS */
-/* ALUNO THEME */
-/* SEDUC THEME */
-/* PROFESSOR THEME */
-/* DIRETOR THEME */
-/* SEAS THEME */
-/* PAIS THEME */
-/*  PEDAGOGO THEME */
-/* PALETTE COLORS */
-/* PALETTE */
-/* PALETTE ALUNO */
-/* PALETTE DIRETOR */
-/* PALETTE PROFESSOR */
-/* PALETTE SEDUC */
-/* PALETTE SEAS */
-/* PALETTE PAIS */
-/* PALETTE PEDAGOGO */
-/* SHADOWS */
-/* PROFILE */
-/* TESTER */
-/* DISPLAY FLEX */
-/* TRANSLATE 2D */
-/* PALETTE */
-/* ANIMATION */
-/* SHADOW */
-/* DEFINITIONS */
-/* ALUNO THEME */
-/* SEDUC THEME */
-/* PROFESSOR THEME */
-/* DIRETOR THEME */
-/* SEAS THEME */
-/* PAIS THEME */
-/*  PEDAGOGO THEME */
-/* PALETTE COLORS */
-/* PALETTE */
-/* PALETTE ALUNO */
-/* PALETTE DIRETOR */
-/* PALETTE PROFESSOR */
-/* PALETTE SEDUC */
-/* PALETTE SEAS */
-/* PALETTE PAIS */
-/* PALETTE PEDAGOGO */
-/* PRIMARY */
-.ava-button {
-  background-color: #607D8B; }
-  .ava-button:focus, .ava-button:hover, .ava-button:active {
-    background-color: #607D8B; }
-
-/* FLAT */
-.ava-button--flat {
-  background-color: transparent !important; }
-  .ava-button--flat:focus, .ava-button--flat:hover, .ava-button--flat:active {
-    background-color: transparent !important; }
-
-/* ACCENT */
-.ava-button--accent {
-  color: white; }
-  .ava-button--accent i {
-    color: inherit; }
-
-/* MATERIALIZE WORKAROUND */
-.ava-button--flat.btn-floating:hover {
-  background-color: transparent; }
-
-/* SPACE BETWEEN BUTTONS */
-.ava-button + .ava-button {
-  margin-left: 12px; }
-
-/* DISPLAY FLEX */
-/* TRANSLATE 2D */
-/* PALETTE */
-/* ANIMATION */
-/* SHADOW */
-/* DEFINITIONS */
-/* ALUNO THEME */
-/* SEDUC THEME */
-/* PROFESSOR THEME */
-/* DIRETOR THEME */
-/* SEAS THEME */
-/* PAIS THEME */
-/*  PEDAGOGO THEME */
-/* PALETTE COLORS */
-/* PALETTE */
-/* PALETTE ALUNO */
-/* PALETTE DIRETOR */
-/* PALETTE PROFESSOR */
-/* PALETTE SEDUC */
-/* PALETTE SEAS */
-/* PALETTE PAIS */
-/* PALETTE PEDAGOGO */
-/* SHADOWS */
-/* PROFILE */
-/* TESTER */
-/* NAVBAR */
-.ava-navbar li:hover, .ava-navbar a:hover {
-  background-color: transparent !important; }
-
-.ava-navbar--tabs {
-  box-shadow: none !important; }
-  .ava-navbar--tabs .nav-wrapper {
-    background-color: #607D8B;
-    z-index: 2; }
-
-/* NAVBAR WITH TABS */
-.ava-navbar--tabs {
-  /* TABS */ }
-  .ava-navbar--tabs .ava-tabs {
-    position: relative;
-    z-index: 1;
-    top: -8px;
-    border-bottom-width: 0;
-    background-color: #607D8B;
-    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12); }
-    .ava-navbar--tabs .ava-tabs .ava-tabs__link {
-      color: rgba(255, 255, 255, 0.54) !important; }
-      .ava-navbar--tabs .ava-tabs .ava-tabs__link.active {
-        color: white !important; }
 
 /* DISPLAY FLEX */
 /* TRANSLATE 2D */
@@ -843,82 +1018,6 @@
   color: rgba(0, 0, 0, 0.54);
   font-weight: bold; }
 
-/* DISPLAY FLEX */
-/* TRANSLATE 2D */
-/* PALETTE */
-/* ANIMATION */
-/* SHADOW */
-/* DEFINITIONS */
-/* ALUNO THEME */
-/* SEDUC THEME */
-/* PROFESSOR THEME */
-/* DIRETOR THEME */
-/* SEAS THEME */
-/* PAIS THEME */
-/*  PEDAGOGO THEME */
-/* PALETTE COLORS */
-/* PALETTE */
-/* PALETTE ALUNO */
-/* PALETTE DIRETOR */
-/* PALETTE PROFESSOR */
-/* PALETTE SEDUC */
-/* PALETTE SEAS */
-/* PALETTE PAIS */
-/* PALETTE PEDAGOGO */
-/* SHADOWS */
-/* PROFILE */
-/* TESTER */
-/* TEXTFIELD */
-.ava-textfield .prefix.active {
-  color: #607D8B !important; }
-
-/* INPUT */
-.ava-textfield__input:focus {
-  border-bottom: 1px solid #607D8B !important;
-  box-shadow: 0 1px 0 0 #607D8B !important;
-  /* LABEL ON FOCUS */ }
-  .ava-textfield__input:focus + .ava-textfield__label {
-    color: #607D8B !important; }
-
-/* LABEL */
-/* DISPLAY FLEX */
-/* TRANSLATE 2D */
-/* PALETTE */
-/* ANIMATION */
-/* SHADOW */
-/* DEFINITIONS */
-/* ALUNO THEME */
-/* SEDUC THEME */
-/* PROFESSOR THEME */
-/* DIRETOR THEME */
-/* SEAS THEME */
-/* PAIS THEME */
-/*  PEDAGOGO THEME */
-/* PALETTE COLORS */
-/* PALETTE */
-/* PALETTE ALUNO */
-/* PALETTE DIRETOR */
-/* PALETTE PROFESSOR */
-/* PALETTE SEDUC */
-/* PALETTE SEAS */
-/* PALETTE PAIS */
-/* PALETTE PEDAGOGO */
-/* SHADOWS */
-/* PROFILE */
-/* TESTER */
-/* DATEFIELD */
-.ava-datefield .prefix.active {
-  color: #607D8B !important; }
-
-/* INPUT */
-.ava-datefield__input:focus {
-  border-bottom: 1px solid #607D8B !important;
-  box-shadow: 0 1px 0 0 #607D8B !important;
-  /* LABEL ON FOCUS */ }
-  .ava-datefield__input:focus + .ava-datefield__label {
-    color: #607D8B !important; }
-
-/* LABEL */
 /* DISPLAY FLEX */
 /* TRANSLATE 2D */
 /* PALETTE */

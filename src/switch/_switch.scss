@@ -1,0 +1,11 @@
+@import '../variables';
+
+/* INPUT CHECKED LEVER */
+
+input[type="checkbox"]:checked + .ava-switch__lever {
+  background-color: $color-primary-light!important;
+
+  &:after {
+    background-color: $color-primary!important;
+  }
+}
