@@ -247,8 +247,8 @@
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
-/* ITEM */
-.ava-collection__item {
+/* ITEM WITH SECONDARY CONTENT */
+.ava-collection--secondary-content > .ava-collection__item {
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
