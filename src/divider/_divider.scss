@@ -1,0 +1,67 @@
+@import "../variables";
+@import "../colors";
+
+.ava-divider {
+  @include DisplayFlex();
+  flex-flow: column nowrap;
+  margin: 12px 0;
+}
+
+/* BEFORE */
+
+.ava-divider:before {
+  content: '';
+  @include DisplayFlex();
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, .1);
+}
+
+/* LABEL */
+
+.ava-divider__label {
+  cursor: pointer;
+  @include shadow-1dp();
+  padding: 8px 20px;
+  background-color: rgba(0,0,0,.05);
+  border-radius: 0 0 6px 6px;
+  align-self: center;
+
+  &.ava-divider__label--start {
+    align-self: flex-start;    
+  }
+  &.ava-divider__label--end {
+    align-self: flex-end;
+  }
+
+  &:hover {
+    @include shadow-2dp();
+    background-color: rgba(0,0,0,.1);
+  }
+
+  & i {
+    vertical-align: middle;
+  }
+}
+
+/* CONTENT */
+
+.ava-divider__content {
+  @include Animation(FadeIn, 0.2s, ease-in-out);
+}
+
+/* IS ON */
+
+.ava-divider.is-on {
+  .ava-divider__content {
+    display: initial;
+  }
+}
+
+/* IS OFF */
+
+.ava-divider.is-off {
+  .ava-divider__content {
+    display: none;
+  }
+}

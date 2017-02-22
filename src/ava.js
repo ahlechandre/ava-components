@@ -19,3 +19,4 @@ require('./tester/tester');
 require('./textfield/textfield');
 require('./timer/timer');
 require('./collapsible/collapsible');
+require('./divider/divider');
