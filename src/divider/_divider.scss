@@ -7,25 +7,38 @@
   margin: 12px 0;
 }
 
-/* BEFORE */
+/* NOT FLAT BEFORE */
 
-.ava-divider:before {
+.ava-divider--flat.ava-divider:after {
   content: '';
   @include DisplayFlex();
   width: 100%;
   height: 1px;
-  background-color: rgba(0, 0, 0, .1);
+  background-color: rgba(0, 0, 0, .08);
+}
+
+/* NOT FLAT LABEL */
+
+.ava-divider:not(.ava-divider--flat) .ava-divider__label {
+  @include shadow-1dp();
+
+  &:hover {
+    @include shadow-2dp();
+  }
 }
 
 /* LABEL */
 
 .ava-divider__label {
   cursor: pointer;
-  @include shadow-1dp();
   padding: 8px 20px;
-  background-color: rgba(0,0,0,.05);
-  border-radius: 0 0 6px 6px;
+  border-radius: 6px 6px 6px 6px;
   align-self: center;
+  background-color: rgba(0,0,0,.05);
+
+  &:hover {
+    background-color: rgba(0,0,0,.05);
+  }
 
   &.ava-divider__label--start {
     align-self: flex-start;    
@@ -34,25 +47,34 @@
     align-self: flex-end;
   }
 
-  &:hover {
-    @include shadow-2dp();
-    background-color: rgba(0,0,0,.1);
-  }
-
   & i {
     vertical-align: middle;
+    @include Animation(FadeIn, 0.2s, ease-in-out);
   }
 }
 
 /* CONTENT */
 
 .ava-divider__content {
-  @include Animation(FadeIn, 0.2s, ease-in-out);
+  @include Animation(Gravitation, 0.2s, ease-in-out);
+}
+
+/* FLAT */
+
+.ava-divider.ava-divider--flat {
+
+  .ava-divider__label {
+    background-color: transparent;    
+  }
 }
 
 /* IS ON */
 
 .ava-divider.is-on {
+  .ava-divider__label {
+    background-color: rgba(0,0,0,.05);    
+  }
+
   .ava-divider__content {
     display: initial;
   }

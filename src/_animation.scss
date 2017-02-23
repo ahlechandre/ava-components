@@ -63,3 +63,36 @@
     transform: translate(100%, 0);
   }
 }
+
+/* GRAVITATION */ 
+
+@keyframes Gravitation {
+  0% {
+    opacity: 0;
+    @include Translate2d(0, 10%);
+  }
+
+  100% {
+    @include Translate2d(0, 0);
+  }
+}
+@-webkit-keyframes Gravitation {
+  0% {
+    opacity: 0;
+    @include Translate2d(0, 10%);
+  }
+
+  100% {
+    @include Translate2d(0, 0);
+  }
+}
+@-moz-keyframes Gravitation {
+  0% {
+    opacity: 0;
+    @include Translate2d(0, 10%);
+  }
+
+  100% {
+    @include Translate2d(0, 0);
+  }
+}
