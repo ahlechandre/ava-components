@@ -5,6 +5,7 @@ require('../../libs/chart-handler/src/chartHandler');
 require('./tabs/tabAjax');
 // Components.
 require('./datefield/datefield');
+require('./timefield/timefield');
 require('./dialog/dialog');
 require('./dialogable/dialogable');
 require('./drawer/drawer');

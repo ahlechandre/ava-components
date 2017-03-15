@@ -284,6 +284,43 @@
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
+/* TIMEFIELD */
+.ava-timefield .prefix.active {
+  color: #673AB7 !important; }
+
+/* INPUT */
+.ava-timefield__input:focus {
+  border-bottom: 1px solid #673AB7 !important;
+  box-shadow: 0 1px 0 0 #673AB7 !important;
+  /* LABEL ON FOCUS */ }
+  .ava-timefield__input:focus + .ava-timefield__label {
+    color: #673AB7 !important; }
+
+/* DISPLAY FLEX */
+/* TRANSLATE 2D */
+/* PALETTE */
+/* ANIMATION */
+/* SHADOW */
+/* DEFINITIONS */
+/* ALUNO THEME */
+/* SEDUC THEME */
+/* PROFESSOR THEME */
+/* DIRETOR THEME */
+/* SEAS THEME */
+/* PAIS THEME */
+/*  PEDAGOGO THEME */
+/* PALETTE COLORS */
+/* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE SEDUC */
+/* PALETTE SEAS */
+/* PALETTE PAIS */
+/* PALETTE PEDAGOGO */
+/* SHADOWS */
+/* PROFILE */
+/* TESTER */
 /* ITEM WITH SECONDARY CONTENT */
 .ava-collection--secondary-content > .ava-collection__item {
   display: -webkit-flex;

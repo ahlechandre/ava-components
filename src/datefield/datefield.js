@@ -6,6 +6,8 @@
  */
 (function () {
   'use strict';
+  // Dependency.
+  require('jquery.inputmask/dist/jquery.inputmask.bundle');
   /**
    * 
    * @class
@@ -17,6 +19,14 @@
     this.init();
   };
 
+  /**
+   * Stories the datasets used by this component.
+   * 
+   */
+  AvaDatefield.prototype._datasets = {
+    FORMAT: 'format',
+  };
+    
   /**
    * Stories the css classes used by this component.
    * 
@@ -95,10 +105,26 @@
   /**
    * Defines label as active.
    * 
-   */  AvaDatefield.prototype._unsetActiveLabel = function () {
+   */
+  AvaDatefield.prototype._unsetActiveLabel = function () {
     return this._label.classList.remove(this._cssClasses.LABEL_ACTIVE_MATERIALIZE);
   };
 
+  /**
+   * Defines the format of input field.
+   */
+  AvaDatefield.prototype._getInputFormat = function () { 
+    var format;
+    var _input = this._getInput();
+
+    if (_input && _input.dataset[this._datasets.FORMAT]) {
+      format = _input.dataset[this._datasets.FORMAT];
+    } else {
+      format = this.options.format;
+    }
+    return format;
+  };
+  
   /**
    * Initializes the datefield.
    * 
@@ -107,7 +133,15 @@
 
     if (!this._isActiveLabel()) this._setActiveLabel();
 
-    if (this._isMaterialInput()) this._setMaterialInput();
+    if (this._isMaterialInput()) {
+      this._setMaterialInput();
+    } else {
+
+      if (typeof Inputmask !== 'undefined') {
+        // Putting date mask.
+        Inputmask(this._getInputFormat()).mask(this._getInput());
+      }
+    }
   };
 
   /**
@@ -199,7 +233,7 @@
   AvaDatefield.prototype.init = function () {
 
     if (!this.element) return;
-
+    
     if (typeof $ === 'undefined' || typeof jQuery === 'undefined') {
       console.warn('Please, load jQuery. Datefield Component has jQuery as dependency.');
       return;

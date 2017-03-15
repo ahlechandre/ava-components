@@ -1,0 +1,26 @@
+@import '../variables';
+
+/* TIMEFIELD */
+
+.ava-timefield {
+  
+  & .prefix.active {    
+      color: $color-primary!important;    
+  }
+}
+
+/* INPUT */
+
+.ava-timefield__input {
+  
+  &:focus {
+    border-bottom: 1px solid $color-primary!important;
+    box-shadow: 0 1px 0 0 $color-primary!important;
+    
+    /* LABEL ON FOCUS */
+
+    & + .ava-timefield__label { 
+      color: $color-primary!important;    
+    }
+  }   
+}

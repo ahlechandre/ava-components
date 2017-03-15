@@ -24,5 +24,8 @@
   "homepage": "https://github.com/ahlechandre/ava-components#readme",
   "devDependencies": {
     "webpack": "^1.13.1"
+  },
+  "dependencies": {
+    "jquery.inputmask": "^3.3.4"
   }
 }
