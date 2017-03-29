@@ -1,0 +1,8 @@
+@import '../variables';
+
+/* FLASH SUBTITLES */
+.ava-card--flash .ava-card__subtitle {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

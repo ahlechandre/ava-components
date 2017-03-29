@@ -1258,4 +1258,35 @@ input[type="checkbox"]:checked + .ava-switch__lever {
 .ava-divider.is-off .ava-divider__content {
   display: none; }
 
+/* DISPLAY FLEX */
+/* TRANSLATE 2D */
+/* PALETTE */
+/* ANIMATION */
+/* SHADOW */
+/* DEFINITIONS */
+/* ALUNO THEME */
+/* SEDUC THEME */
+/* PROFESSOR THEME */
+/* DIRETOR THEME */
+/* SEAS THEME */
+/* PAIS THEME */
+/*  PEDAGOGO THEME */
+/* PALETTE COLORS */
+/* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE SEDUC */
+/* PALETTE SEAS */
+/* PALETTE PAIS */
+/* PALETTE PEDAGOGO */
+/* SHADOWS */
+/* PROFILE */
+/* TESTER */
+/* FLASH SUBTITLES */
+.ava-card--flash .ava-card__subtitle {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
 /*# sourceMappingURL=ava.professor.css.map */
