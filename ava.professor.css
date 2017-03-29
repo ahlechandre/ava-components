@@ -135,6 +135,23 @@
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
+/* AVATAR */
+.ava-avatar {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.05); }
+  .ava-avatar.ava-avatar--rounded {
+    border-radius: 100%; }
+  .ava-avatar.ava-avatar--small {
+    width: 60px;
+    height: 60px; }
+  .ava-avatar.ava-avatar--medium {
+    width: 120px;
+    height: 120px; }
+  .ava-avatar.ava-avatar--large {
+    width: 240px;
+    height: 240px; }
+
 /* CONTENT */
 .ava-content {
   margin: 0; }
