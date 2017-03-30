@@ -21,3 +21,4 @@ require('./textfield/textfield');
 require('./timer/timer');
 require('./collapsible/collapsible');
 require('./divider/divider');
+require('./avatar/avatar');

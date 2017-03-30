@@ -135,23 +135,6 @@
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
-/* AVATAR */
-.ava-avatar {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: rgba(0, 0, 0, 0.05); }
-  .ava-avatar.ava-avatar--rounded {
-    border-radius: 100%; }
-  .ava-avatar.ava-avatar--small {
-    width: 60px;
-    height: 60px; }
-  .ava-avatar.ava-avatar--medium {
-    width: 120px;
-    height: 120px; }
-  .ava-avatar.ava-avatar--large {
-    width: 240px;
-    height: 240px; }
-
 /* CONTENT */
 .ava-content {
   margin: 0; }
@@ -168,6 +151,9 @@
 
 /* ALIGNMENTS */
 .ava-align {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
   display: flex; }
   .ava-align.ava-align--center {
     align-items: center;
@@ -1305,5 +1291,83 @@ input[type="checkbox"]:checked + .ava-switch__lever {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis; }
+
+/* DISPLAY FLEX */
+/* TRANSLATE 2D */
+/* PALETTE */
+/* ANIMATION */
+/* SHADOW */
+/* DEFINITIONS */
+/* ALUNO THEME */
+/* SEDUC THEME */
+/* PROFESSOR THEME */
+/* DIRETOR THEME */
+/* SEAS THEME */
+/* PAIS THEME */
+/*  PEDAGOGO THEME */
+/* PALETTE COLORS */
+/* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE SEDUC */
+/* PALETTE SEAS */
+/* PALETTE PAIS */
+/* PALETTE PEDAGOGO */
+/* SHADOWS */
+/* PROFILE */
+/* TESTER */
+/* AVATAR */
+.ava-avatar {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.05);
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .ava-avatar.ava-avatar--rounded {
+    border-radius: 100%; }
+  .ava-avatar.ava-avatar--small {
+    width: 60px;
+    height: 60px; }
+    .ava-avatar.ava-avatar--small .material-icons {
+      font-size: 30px; }
+  .ava-avatar.ava-avatar--medium {
+    width: 120px;
+    height: 120px; }
+    .ava-avatar.ava-avatar--medium .material-icons {
+      font-size: 60px; }
+  .ava-avatar.ava-avatar--large {
+    width: 240px;
+    height: 240px; }
+    .ava-avatar.ava-avatar--large .material-icons {
+      font-size: 120px; }
+
+/* AVATAR INPUT */
+.ava-avatar--input {
+  cursor: pointer; }
+  .ava-avatar--input.ava-avatar--is-change .material-icons {
+    color: transparent; }
+  .ava-avatar--input input[type="file"] {
+    display: none; }
+  .ava-avatar--input:after {
+    content: '';
+    width: 0;
+    height: 0;
+    background: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    border-radius: 100%; }
+  .ava-avatar--input:hover .material-icons {
+    position: absolute;
+    z-index: 2;
+    color: white !important; }
+  .ava-avatar--input:hover:after {
+    width: inherit;
+    height: inherit; }
+  .ava-avatar--input .material-icons {
+    color: rgba(0, 0, 0, 0.1); }
 
 /*# sourceMappingURL=ava.seduc.css.map */

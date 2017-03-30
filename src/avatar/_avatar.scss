@@ -1,0 +1,90 @@
+@import '../variables';
+
+$avatar-small-size: 60px;
+$avatar-medium-size: 120px;
+$avatar-large-size: 240px;
+
+/* AVATAR */
+.ava-avatar {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, .05);
+  @include DisplayFlex();
+  align-items: center;
+  justify-content:  center;
+
+  &.ava-avatar--rounded {
+    border-radius: 100%;
+  }
+
+  &.ava-avatar--small {
+    width: $avatar-small-size;
+    height: $avatar-small-size;
+
+    & .material-icons {
+      font-size: $avatar-small-size / 2;
+    }
+  }
+  
+  &.ava-avatar--medium {
+    width: $avatar-medium-size;
+    height: $avatar-medium-size;
+
+    & .material-icons {
+      font-size: $avatar-medium-size / 2;
+    }
+  }
+
+  &.ava-avatar--large {
+    width: $avatar-large-size;
+    height: $avatar-large-size;
+
+    & .material-icons {
+      font-size: $avatar-large-size / 2;
+    }
+  }
+}
+
+/* AVATAR INPUT */
+
+.ava-avatar--input {
+  cursor: pointer;
+
+  // Change state.
+  &.ava-avatar--is-change {
+  
+    & .material-icons {
+      color: transparent;
+    }
+  }
+
+  & input[type="file"] {
+    display: none;
+  }
+
+  &:after {
+    content: '';
+    width: 0;
+    height: 0;
+    background: rgba(0,0,0,0.2);
+    position: absolute;
+    border-radius: 100%;
+  }
+  
+  &:hover {
+    & .material-icons {
+      position: absolute;
+      z-index: 2;
+      color: white!important;
+    }
+
+    &:after {
+      width: inherit;
+      height: inherit;
+    }    
+  }
+  
+  & .material-icons {
+    color: rgba(0, 0, 0, .1);
+  }
+}

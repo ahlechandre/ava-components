@@ -51,7 +51,6 @@
 	__webpack_require__(4);
 	// Components.
 	__webpack_require__(5);
-	__webpack_require__(22);
 	__webpack_require__(7);
 	__webpack_require__(8);
 	__webpack_require__(9);
@@ -67,6 +66,8 @@
 	__webpack_require__(19);
 	__webpack_require__(20);
 	__webpack_require__(21);
+	__webpack_require__(22);
+	__webpack_require__(23);
 
 
 /***/ },
@@ -4680,6 +4681,218 @@
 
 /***/ },
 /* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * timefield.js - a component to handle time inputs. 
+	 * 
+	 * @author Alexandre Thebaldi <ahlechandre@gmail.com>
+	 * @requires componentize
+	 */
+	(function () {
+	  'use strict';
+	  // Dependency.
+	  __webpack_require__(6);
+	  /**
+	   * 
+	   * @class
+	   */
+	  function AvaTimefield(element) {
+	    this.element = element;
+
+	    // Initializes the instance.
+	    this.init();
+	  };
+
+	  /**
+	   * Stories the datasets used by this component.
+	   * 
+	   */
+	  AvaTimefield.prototype._datasets = {
+	    FORMAT: 'format',
+	  };
+	  
+	  /**
+	   * Stories the css classes used by this component.
+	   * 
+	   */
+	  AvaTimefield.prototype._cssClasses = {
+	    INPUT: 'ava-timefield__input',
+	    LABEL: 'ava-timefield__label',
+	    LABEL_ACTIVE_MATERIALIZE: 'active',
+	  };
+
+	  /**
+	   * Stories the constant strings used by this component.
+	   * 
+	   */
+	  AvaTimefield.prototype._constants = {};
+
+	  /**
+	   * Stories the input element used by this component.
+	   * 
+	   */
+	  AvaTimefield.prototype._input = {};
+
+	  /**
+	   * Stories the label element used by this component.
+	   * 
+	   */
+	  AvaTimefield.prototype._label = {};
+
+	  /**
+	   * Stories the options of material timefield.
+	   * 
+	   * @type {object}
+	   */
+	  AvaTimefield.prototype.options = {
+	    format: 'hh:mm'
+	  };
+
+	  /**
+	   * Returns the input element.
+	   * 
+	   * @return {HTMLElement | null} 
+	   */
+	  AvaTimefield.prototype._getInput = function () {
+	    return this.element.querySelector('.' + this._cssClasses.INPUT);
+	  };
+
+	  /**
+	   * Returns the label element.
+	   * 
+	   * @return {HTMLElement | null} 
+	   */
+	  AvaTimefield.prototype._getLabel = function () {
+	    return this.element.querySelector('.' + this._cssClasses.LABEL);
+	  };
+
+	  /**
+	   * Check if label is active.
+	   * 
+	   * @return {boolean}
+	   */
+	  AvaTimefield.prototype._isActiveLabel = function () {
+	    return this._label.classList.contains(this._cssClasses.LABEL_ACTIVE_MATERIALIZE);
+	  };
+
+	  /**
+	   * Defines label as active.
+	   * 
+	   */
+	  AvaTimefield.prototype._setActiveLabel = function () {
+	    return this._label.classList.add(this._cssClasses.LABEL_ACTIVE_MATERIALIZE);
+	  };
+
+	  /**
+	   * Defines label as active.
+	   * 
+	   */
+	  AvaTimefield.prototype._unsetActiveLabel = function () {
+	    return this._label.classList.remove(this._cssClasses.LABEL_ACTIVE_MATERIALIZE);
+	  };
+	  
+	  /**
+	   * Defines the format of input field.
+	   */
+	  AvaTimefield.prototype._getInputFormat = function () { 
+	    var format;
+	    var _input = this._getInput();
+
+	    if (_input && _input.dataset[this._datasets.FORMAT]) {
+	      format = _input.dataset[this._datasets.FORMAT];
+	    } else {
+	      format = this.options.format;
+	    }
+	    return format;
+	  };
+
+	  /**
+	   * Initializes the timefield.
+	   * 
+	   */
+	  AvaTimefield.prototype.create = function () {
+
+	    if (!this._isActiveLabel()) this._setActiveLabel();
+
+	    if (typeof Inputmask !== 'undefined') {
+	      // Putting date mask.
+	      Inputmask(this._getInputFormat()).mask(this._getInput());
+	    }
+	  };
+
+	  /**
+	   * Destroy the timefield.
+	   * 
+	   */
+	  AvaTimefield.prototype.destroy = function () {
+	    this._unsetActiveLabel();
+	  };
+
+	  /**
+	   * Update the timefield.
+	   * 
+	   */
+	  AvaTimefield.prototype.update = function () {
+	    this.destroy();
+	    this.create();
+	  };
+
+	  /**
+	   * Clear the timefield.
+	   * 
+	   */
+	  AvaTimefield.prototype.clear = function () {
+	    this._input.value = '';
+	  };
+
+	  /**
+	   * Defines the value of timefield.
+	   * 
+	   * @param {string} value
+	   */
+	  AvaTimefield.prototype.setValue = function (value) {
+	    /** @type {DateConstructor} */
+	    var dateObj;
+	    var picker;
+	    var dateArr = [];
+	    var valueSplit = [];
+	    this._input.value = value;
+	    this.update();
+	  };
+
+	  /**
+	   * Initializes the instance.
+	   * 
+	   */
+	  AvaTimefield.prototype.init = function () {
+
+	    if (!this.element) return;
+	    
+	    if (typeof $ === 'undefined' || typeof jQuery === 'undefined') {
+	      console.warn('Please, load jQuery. Datefield Component has jQuery as dependency.');
+	      return;
+	    }
+
+	    this._input = this._getInput();
+	    this._label = this._getLabel();
+
+	    if (!this._input) return;
+
+	    // Initial initialization.
+	    this.create();
+	  };
+
+	  // Registers the component. "Componentize" object must be available globally.
+	  Componentize.register({
+	    name: 'AvaTimefield',
+	    constructor: AvaTimefield,
+	    cssClass: 'ava-timefield',
+	  });
+	})();
+
+/***/ },
+/* 8 */
 /***/ function(module, exports) {
 
 	/**
@@ -4781,7 +4994,7 @@
 	})();
 
 /***/ },
-/* 8 */
+/* 9 */
 /***/ function(module, exports) {
 
 	/**
@@ -5115,7 +5328,7 @@
 	})();
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports) {
 
 	/**
@@ -5216,7 +5429,7 @@
 	})();
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports) {
 
 	/**
@@ -5412,7 +5625,7 @@
 	})();
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports) {
 
 	/**
@@ -5516,7 +5729,7 @@
 	})();
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports) {
 
 	/**
@@ -5662,7 +5875,7 @@
 	})();
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports) {
 
 	/**
@@ -5896,7 +6109,7 @@
 	})();
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports) {
 
 	/**
@@ -6153,7 +6366,7 @@
 	})();
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports) {
 
 	/**
@@ -6232,7 +6445,7 @@
 	})();
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports) {
 
 	/**
@@ -6319,7 +6532,7 @@
 	})();
 
 /***/ },
-/* 17 */
+/* 18 */
 /***/ function(module, exports) {
 
 	/**
@@ -7319,7 +7532,7 @@
 	})();
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports) {
 
 	/**
@@ -7516,7 +7729,7 @@
 	})();
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports) {
 
 	/**
@@ -8127,7 +8340,7 @@
 	})();
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports) {
 
 	/**
@@ -8240,7 +8453,7 @@
 	})();
 
 /***/ },
-/* 21 */
+/* 22 */
 /***/ function(module, exports) {
 
 	/**
@@ -8432,24 +8645,22 @@
 	})();
 
 /***/ },
-/* 22 */
-/***/ function(module, exports, __webpack_require__) {
+/* 23 */
+/***/ function(module, exports) {
 
 	/**
-	 * timefield.js - a component to handle time inputs. 
+	 * avatar.js - a component to handle avatars images. 
 	 * 
 	 * @author Alexandre Thebaldi <ahlechandre@gmail.com>
 	 * @requires componentize
 	 */
 	(function () {
 	  'use strict';
-	  // Dependency.
-	  __webpack_require__(6);
 	  /**
 	   * 
 	   * @class
 	   */
-	  function AvaTimefield(element) {
+	  function AvaAvatar(element) {
 	    this.element = element;
 
 	    // Initializes the instance.
@@ -8457,189 +8668,157 @@
 	  };
 
 	  /**
-	   * Stories the datasets used by this component.
+	   * Stories the input element.
 	   * 
 	   */
-	  AvaTimefield.prototype._datasets = {
-	    FORMAT: 'format',
-	  };
-	  
+	  AvaAvatar.prototype.input = '';
+	    
 	  /**
 	   * Stories the css classes used by this component.
 	   * 
 	   */
-	  AvaTimefield.prototype._cssClasses = {
-	    INPUT: 'ava-timefield__input',
-	    LABEL: 'ava-timefield__label',
-	    LABEL_ACTIVE_MATERIALIZE: 'active',
+	  AvaAvatar.prototype._cssClasses = {
+	    INPUT: 'ava-avatar__input',
+	    AVATAR_INPUT: 'ava-avatar--input',
+	    AVATAR_IS_CHANGE: 'ava-avatar--is-change',
 	  };
 
 	  /**
-	   * Stories the constant strings used by this component.
-	   * 
-	   */
-	  AvaTimefield.prototype._constants = {};
-
-	  /**
-	   * Stories the input element used by this component.
-	   * 
-	   */
-	  AvaTimefield.prototype._input = {};
-
-	  /**
-	   * Stories the label element used by this component.
-	   * 
-	   */
-	  AvaTimefield.prototype._label = {};
-
-	  /**
-	   * Stories the options of material timefield.
-	   * 
-	   * @type {object}
-	   */
-	  AvaTimefield.prototype.options = {
-	    format: 'hh:mm'
-	  };
-
-	  /**
-	   * Returns the input element.
-	   * 
-	   * @return {HTMLElement | null} 
-	   */
-	  AvaTimefield.prototype._getInput = function () {
+	   * Returns the avatar input file.
+	   *
+	   * @return {HTMLElement}
+	   */  
+	  AvaAvatar.prototype.getInput = function () { 
 	    return this.element.querySelector('.' + this._cssClasses.INPUT);
 	  };
 
 	  /**
-	   * Returns the label element.
-	   * 
-	   * @return {HTMLElement | null} 
-	   */
-	  AvaTimefield.prototype._getLabel = function () {
-	    return this.element.querySelector('.' + this._cssClasses.LABEL);
+	   * Returns the input file value.
+	   *
+	   * @return {HTMLElement}
+	   */  
+	  AvaAvatar.prototype.getInputValue = function () { 
+	    return (this.input ? this.input.value : null);
 	  };
 
 	  /**
-	   * Check if label is active.
-	   * 
-	   * @return {boolean}
-	   */
-	  AvaTimefield.prototype._isActiveLabel = function () {
-	    return this._label.classList.contains(this._cssClasses.LABEL_ACTIVE_MATERIALIZE);
-	  };
-
-	  /**
-	   * Defines label as active.
-	   * 
-	   */
-	  AvaTimefield.prototype._setActiveLabel = function () {
-	    return this._label.classList.add(this._cssClasses.LABEL_ACTIVE_MATERIALIZE);
-	  };
-
-	  /**
-	   * Defines label as active.
-	   * 
-	   */
-	  AvaTimefield.prototype._unsetActiveLabel = function () {
-	    return this._label.classList.remove(this._cssClasses.LABEL_ACTIVE_MATERIALIZE);
+	   * Returns an array of input files.
+	   *
+	   * @return {array}
+	   */  
+	  AvaAvatar.prototype.getInputFiles = function () { 
+	    return (this.input ? this.input.files : null);
 	  };
 	  
 	  /**
-	   * Defines the format of input field.
-	   */
-	  AvaTimefield.prototype._getInputFormat = function () { 
-	    var format;
-	    var _input = this._getInput();
+	   * Removes the current avatar and update component state.
+	   *
+	   */  
+	  AvaAvatar.prototype.remove = function () {
+	    this.element.style.backgroundImage = '';
+	    this.setState();
 
-	    if (_input && _input.dataset[this._datasets.FORMAT]) {
-	      format = _input.dataset[this._datasets.FORMAT];
+	    if (!this.input) return;
+
+	    this.input.value = '';
+	  }
+	  
+	  /**
+	   * Open the system dialog to search photos.
+	   *
+	   */  
+	  AvaAvatar.prototype.add = function () {
+	    return (this.input ? this.input.click() : undefined);
+	  }
+	  
+	  /**
+	   * Defines the state of avatar.
+	   *
+	   */
+	  AvaAvatar.prototype.setState = function () {
+	    var isEmptyBackground = (!this.element.style.backgroundImage ||
+	      this.element.style.backgroundImage === 'url("")');
+
+	    if (isEmptyBackground) {
+	      this.element.classList.remove(this._cssClasses.AVATAR_IS_CHANGE);
 	    } else {
-	      format = this.options.format;
-	    }
-	    return format;
-	  };
-
-	  /**
-	   * Initializes the timefield.
-	   * 
-	   */
-	  AvaTimefield.prototype.create = function () {
-
-	    if (!this._isActiveLabel()) this._setActiveLabel();
-
-	    if (typeof Inputmask !== 'undefined') {
-	      // Putting date mask.
-	      Inputmask(this._getInputFormat()).mask(this._getInput());
+	      this.element.classList.add(this._cssClasses.AVATAR_IS_CHANGE);
 	    }
 	  };
-
+	  
 	  /**
-	   * Destroy the timefield.
-	   * 
+	   * Changes the preview element background image.
+	   *
 	   */
-	  AvaTimefield.prototype.destroy = function () {
-	    this._unsetActiveLabel();
+	  AvaAvatar.prototype.setPreview = function (imageAsDataURL) {
+	    this.element.style.backgroundImage = 'url(' + imageAsDataURL + ')';
+	    this.setState();
+	  };
+	  
+	  /**
+	   * Updates the preview avatar photo.
+	   *
+	   */
+	  AvaAvatar.prototype.changePhoto = function (photo) {
+	    var reader = new FileReader();
+
+	    if (!photo) return;
+
+	    reader.readAsDataURL(photo);
+	    reader.addEventListener('load', function () {
+	      this.setPreview(reader.result);  
+	    }.bind(this), false);
 	  };
 
 	  /**
-	   * Update the timefield.
-	   * 
+	   * Defines the default behavior of the input.
+	   *
 	   */
-	  AvaTimefield.prototype.update = function () {
-	    this.destroy();
-	    this.create();
+	  AvaAvatar.prototype.setInputBehavior = function () {
+
+	    // Set input file click when preview photo is clicked.
+	    this.element.addEventListener('click', function () {
+	      this.input.click();  
+	    }.bind(this));
+
+	    // Event listener to avatar changes.
+	    this.input.addEventListener('change', function () {
+	      var photo = this.input.files[0];
+	      this.changePhoto(photo);
+	    }.bind(this));
 	  };
 
 	  /**
-	   * Clear the timefield.
-	   * 
+	   * Check if avatar is inputable.
+	   *
 	   */
-	  AvaTimefield.prototype.clear = function () {
-	    this._input.value = '';
-	  };
-
-	  /**
-	   * Defines the value of timefield.
-	   * 
-	   * @param {string} value
-	   */
-	  AvaTimefield.prototype.setValue = function (value) {
-	    /** @type {DateConstructor} */
-	    var dateObj;
-	    var picker;
-	    var dateArr = [];
-	    var valueSplit = [];
-	    this._input.value = value;
-	    this.update();
+	  AvaAvatar.prototype.isInput = function () {
+	    return this.element.classList.contains(this._cssClasses.AVATAR_INPUT);
 	  };
 
 	  /**
 	   * Initializes the instance.
 	   * 
 	   */
-	  AvaTimefield.prototype.init = function () {
+	  AvaAvatar.prototype.init = function () {
 
 	    if (!this.element) return;
-	    
-	    if (typeof $ === 'undefined' || typeof jQuery === 'undefined') {
-	      console.warn('Please, load jQuery. Datefield Component has jQuery as dependency.');
-	      return;
-	    }
 
-	    this._input = this._getInput();
-	    this._label = this._getLabel();
+	    if (!this.isInput()) return;   
 
-	    if (!this._input) return;
+	    this.input = this.getInput();
 
-	    // Initial initialization.
-	    this.create();
+	    if (!this.input) return;
+
+	    this.setInputBehavior();
+	    this.setState();
 	  };
 
 	  // Registers the component. "Componentize" object must be available globally.
 	  Componentize.register({
-	    name: 'AvaTimefield',
-	    constructor: AvaTimefield,
-	    cssClass: 'ava-timefield',
+	    name: 'AvaAvatar',
+	    constructor: AvaAvatar,
+	    cssClass: 'ava-avatar',
 	  });
 	})();
 
