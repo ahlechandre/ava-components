@@ -1,1 +1,5 @@
 @import '../variables';
+
+.ava-drawer__item {
+  @include TextEllipsis();   
+}

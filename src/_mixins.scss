@@ -1,3 +1,10 @@
+/* TEXT ELLIPSE */
+@mixin TextEllipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 /* DISPLAY FLEX */
 
 @mixin DisplayFlex($important: null) {
