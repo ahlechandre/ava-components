@@ -1400,4 +1400,64 @@ input[type="checkbox"]:checked + .ava-switch__lever {
   .ava-avatar--input .material-icons {
     color: rgba(0, 0, 0, 0.1); }
 
+/* TEXT ELLIPSE */
+/* DISPLAY FLEX */
+/* TRANSLATE 2D */
+/* PALETTE */
+/* ANIMATION */
+/* SHADOW */
+/* DEFINITIONS */
+/* ALUNO THEME */
+/* SEDUC THEME */
+/* PROFESSOR THEME */
+/* DIRETOR THEME */
+/* SEAS THEME */
+/* PAIS THEME */
+/*  PEDAGOGO THEME */
+/* PALETTE COLORS */
+/* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE SEDUC */
+/* PALETTE SEAS */
+/* PALETTE PAIS */
+/* PALETTE PEDAGOGO */
+/* SHADOWS */
+/* PROFILE */
+/* TESTER */
+.ava-inbox__date {
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.54); }
+
+.ava-inbox__thumb {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  left: 15px;
+  overflow: hidden;
+  border-radius: 100%;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 26px;
+  font-weight: 300; }
+
+.ava-inbox__list-subject {
+  color: #222; }
+
+.ava-inbox__list .ava-card__content {
+  padding: 10px 20px 10px 0; }
+.ava-inbox__list .ava-collection__item {
+  border-left: 3px solid transparent;
+  /* UNREAD */ }
+  .ava-inbox__list .ava-collection__item.ava-collection__item--active {
+    border-left-color: #3F51B5; }
+
 /*# sourceMappingURL=ava.aluno.css.map */

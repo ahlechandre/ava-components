@@ -1,0 +1,43 @@
+@import '../variables';
+
+.ava-inbox__date {
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.ava-inbox__thumb {
+  @include DisplayFlex();
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  left: 15px;
+  overflow: hidden;
+  border-radius: 100%;
+  align-items: center;
+  background-color: rgba(0, 0, 0, .5);
+  color: white;
+  font-size: 26px;
+  font-weight: 300;
+}
+
+.ava-inbox__list-subject {
+  color: #222;
+}
+
+
+.ava-inbox__list {
+  & .ava-card__content {
+    padding: 10px 20px 10px 0;
+  }
+ 
+  & .ava-collection__item {
+    border-left: 3px solid transparent;
+
+    /* UNREAD */
+    &.ava-collection__item--active {
+      border-left-color: $color-primary;
+    }
+  }
+}
