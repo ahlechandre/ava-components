@@ -1426,38 +1426,131 @@ input[type="checkbox"]:checked + .ava-switch__lever {
 /* SHADOWS */
 /* PROFILE */
 /* TESTER */
+/* ITEM */
+.ava-inbox__item {
+  margin: 0 !important; }
+
+/* ACTIVE INBOX */
+.ava-inbox__item.active .ava-inbox__header > .ava-inbox__thumb,
+.ava-inbox__item.active .ava-inbox__header > .ava-inbox__list-from,
+.ava-inbox__item.active .ava-inbox__header > .ava-inbox__list-precontent {
+  display: none; }
+.ava-inbox__item.active .ava-inbox__header > .ava-inbox__list-subject {
+  font-size: 22px;
+  font-weight: normal; }
+
+/* OUTER */
 .ava-inbox__date {
   font-weight: bold;
   color: rgba(0, 0, 0, 0.54); }
+
+/* HEADER */
+.ava-inbox__header {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: flex;
+  align-items: center; }
 
 .ava-inbox__thumb {
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
   display: flex;
-  position: absolute;
   justify-content: center;
   align-items: center;
-  width: 42px;
-  height: 42px;
-  left: 15px;
-  overflow: hidden;
+  width: 32px;
+  height: 32px;
+  margin: 0 20px 0 4px;
   border-radius: 100%;
-  align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 300; }
 
-.ava-inbox__list-subject {
-  color: #222; }
+.ava-inbox__header > .ava-inbox__list-from {
+  display: none; }
 
-.ava-inbox__list .ava-card__content {
-  padding: 10px 20px 10px 0; }
-.ava-inbox__list .ava-collection__item {
-  border-left: 3px solid transparent;
-  /* UNREAD */ }
-  .ava-inbox__list .ava-collection__item.ava-collection__item--active {
-    border-left-color: #3F51B5; }
+.ava-inbox__list-from {
+  width: 100px;
+  font-weight: bold; }
+
+.ava-inbox__list-subject {
+  color: #222;
+  font-weight: 700;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+.ava-inbox__list-precontent {
+  display: none; }
+
+.ava-inbox__item-headers {
+  font-weight: bold;
+  padding: 0 !important; }
+
+.ava-inbox__item-message {
+  font-size: 16px; }
+
+/* BODY */
+.ava-inbox__body {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: flex;
+  flex-flow: column nowrap; }
+  .ava-inbox__body .ava-inbox__thumb {
+    margin: 8px 0; }
+
+.ava-inbox__action {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 12px 0 0 0; }
+
+/* LARGE SCREENS */
+@media only screen and (min-width: 768px) {
+  .ava-inbox__header > .ava-inbox__list-from {
+    display: initial; }
+
+  .ava-inbox__list-precontent {
+    display: initial;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.7); }
+    .ava-inbox__list-precontent:before {
+      content: '\2013';
+      margin: 0 4px;
+      font-size: inherit;
+      color: inherit;
+      opacity: 0.5; } }
+/* TEXT ELLIPSE */
+/* DISPLAY FLEX */
+/* TRANSLATE 2D */
+/* PALETTE */
+/* ANIMATION */
+/* SHADOW */
+/* DEFINITIONS */
+/* ALUNO THEME */
+/* SEDUC THEME */
+/* PROFESSOR THEME */
+/* DIRETOR THEME */
+/* SEAS THEME */
+/* PAIS THEME */
+/*  PEDAGOGO THEME */
+/* PALETTE COLORS */
+/* PALETTE */
+/* PALETTE ALUNO */
+/* PALETTE DIRETOR */
+/* PALETTE PROFESSOR */
+/* PALETTE SEDUC */
+/* PALETTE SEAS */
+/* PALETTE PAIS */
+/* PALETTE PEDAGOGO */
+/* SHADOWS */
+/* PROFILE */
+/* TESTER */
+.ava-collapsible__body {
+  display: none; }
 
 /*# sourceMappingURL=ava.aluno.css.map */

@@ -54,6 +54,7 @@
     var triggerElements = document.querySelectorAll('[href="' + triggerElementHref + '"]');
     var onReady;
     var onComplete;
+    var dialogObject;
 
     if (!triggerElements) return;
     
@@ -63,12 +64,17 @@
     onComplete = function () {
       this.element.dispatchEvent(this._customEvents.onclose);      
     };
-    
-    // jQuery initialization.
-    $(triggerElements).leanModal({
+    dialogObject = {
       ready: onReady.bind(this),
       complete: onComplete.bind(this),
-    });
+    };
+    
+    // jQuery initialization.
+    if ($(triggerElements).modal) {
+      $(this.element).modal(dialogObject);
+    } else if ($(triggerElements).leanModal) {
+      $(triggerElements).leanModal(dialogObject);
+    }
   };
 
   /**

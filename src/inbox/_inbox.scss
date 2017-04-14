@@ -1,43 +1,112 @@
 @import '../variables';
 
+/* ITEM */
+.ava-inbox__item {
+  margin: 0!important;
+}
+
+/* ACTIVE INBOX */
+.ava-inbox__item.active {
+  & .ava-inbox__header > .ava-inbox__thumb, 
+    .ava-inbox__header > .ava-inbox__list-from,
+    .ava-inbox__header > .ava-inbox__list-precontent {
+      display: none;
+    } 
+
+  & .ava-inbox__header > .ava-inbox__list-subject {
+    font-size: 22px;
+    font-weight: normal;
+  }
+}
+
+/* OUTER */
 .ava-inbox__date {
   font-weight: bold;
   color: rgba(0, 0, 0, 0.54);
 }
 
+/* HEADER */
+.ava-inbox__header {
+  @include DisplayFlex();
+  align-items: center;
+}
+
 .ava-inbox__thumb {
   @include DisplayFlex();
-  position: absolute;
   justify-content: center;
   align-items: center;
-  width: 42px;
-  height: 42px;
-  left: 15px;
-  overflow: hidden;
+  width: 32px;
+  height: 32px;
+  margin: 0 20px 0 4px;
   border-radius: 100%;
-  align-items: center;
   background-color: rgba(0, 0, 0, .5);
   color: white;
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 300;
+}
+
+.ava-inbox__header > .ava-inbox__list-from {
+  display: none;  
+}
+
+.ava-inbox__list-from {
+  width: 100px;
+  font-weight: bold; 
 }
 
 .ava-inbox__list-subject {
   color: #222;
+  font-weight: 700;
+  @include TextEllipsis();
 }
 
+.ava-inbox__list-precontent {
+  display: none;
+}
 
-.ava-inbox__list {
-  & .ava-card__content {
-    padding: 10px 20px 10px 0;
+.ava-inbox__item-headers {
+  font-weight: bold;
+  padding: 0!important;
+}
+
+.ava-inbox__item-message {
+  font-size: 16px;
+}
+
+/* BODY */
+.ava-inbox__body {
+  @include DisplayFlex();
+  flex-flow: column nowrap;
+
+  & .ava-inbox__thumb {
+    margin: 8px 0;
   }
- 
-  & .ava-collection__item {
-    border-left: 3px solid transparent;
+}
 
-    /* UNREAD */
-    &.ava-collection__item--active {
-      border-left-color: $color-primary;
+.ava-inbox__action {
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding: 12px 0 0 0;
+}
+
+/* LARGE SCREENS */
+@media only screen and (min-width: 768px) {
+  .ava-inbox__header > .ava-inbox__list-from {
+    display: initial;  
+  }
+
+  .ava-inbox__list-precontent {
+    display: initial;
+
+    &:before {
+      content: '\2013';
+      margin: 0 4px;
+      font-size: inherit;
+      color: inherit;
+      opacity: 0.5;
     }
+
+    @include TextEllipsis();
+    font-weight: normal;
+    color: rgba(0, 0, 0, .7);
   }
 }

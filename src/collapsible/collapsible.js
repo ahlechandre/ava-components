@@ -75,6 +75,9 @@
     // Adding Materialize native css class.
     this.element.classList.add(this._cssClasses.COLLAPSIBLE_NATIVE);
 
+    console.log('creating collapsible');
+    console.log(this.element);
+    
     $(this.element).collapsible({
       accordion: isAccordion,
     });
